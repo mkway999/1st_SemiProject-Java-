@@ -34,7 +34,6 @@
 
 import java.util.Scanner;
 import java.io.IOException;
-
 class AdMain implements VmMenu
 {	
 	private static final int AD_SALES = 1;		// 매출정보 조회
