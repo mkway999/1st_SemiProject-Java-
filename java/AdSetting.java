@@ -23,7 +23,6 @@
 */
 import java.util.Scanner;
 import java.io.IOException;
-
 class AdSetting extends AdMain
 {
 	//#1
