@@ -5,52 +5,51 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 
-
 public class Coating
 {	
 	int temp = 0;
 
-	int n; // ¼³ÅÁ ¿É¼Ç ÀÔ·Â°ª 
+	int n; // ì„¤íƒ• ì˜µì…˜ ì…ë ¥ê°’ 
 	
-	VendingMachine menu = new VendingMachine(); // ¸ŞÀÎ ¸Ş´º Å¬·¡½º ÀÎ½ºÅÏ½º »ı¼º
+	VendingMachine menu = new VendingMachine(); // ë©”ì¸ ë©”ë‰´ í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 	
 	static List<String> sugarCoatinList = new ArrayList<String>();
 	
-	// RandomFruit1212 Å¬·¡½º¿¡¼­ selectedFruits Á¤º¸ °¡Á®¿À±â
-	//selectedFruits =  ·£´ıÀ¸·Î ÃßÃµµÈ °úÀÏÀ» huru¿¡ ´ã±âÀü¿¡  ÀúÀåÇÏ´Â ¸®½ºÆ®
+	// RandomFruit1212 í´ë˜ìŠ¤ì—ì„œ selectedFruits ì •ë³´ ê°€ì ¸ì˜¤ê¸°
+	//selectedFruits =  ëœë¤ìœ¼ë¡œ ì¶”ì²œëœ ê³¼ì¼ì„ huruì— ë‹´ê¸°ì „ì—  ì €ì¥í•˜ëŠ” ë¦¬ìŠ¤íŠ¸
 	List<FruitsProducts> selectedFruits = RandomFruit1212.selectedFruits;
 	
-	static List<Integer> kcList = new ArrayList<Integer>(); //  ²¿Ä¡ Àç°í ´ã´Â ¸®½ºÆ®
+	static List<Integer> kcList = new ArrayList<Integer>(); //  ê¼¬ì¹˜ ì¬ê³  ë‹´ëŠ” ë¦¬ìŠ¤íŠ¸
 
-	//  Ãß°¡ ¼³ÅÁ Àç°í¸¦ ÀúÀåÇÒ ÀÚ·á±¸Á¶
+	//  ì¶”ê°€ ì„¤íƒ• ì¬ê³ ë¥¼ ì €ì¥í•  ìë£Œêµ¬ì¡°
     static List<Integer> sugarStockList = new ArrayList<Integer>();
 
 	public void sugarPrint() throws IOException
 	{
 
-		//System.out.println(sm.subMaterialList.get("²¿Ä¡").getSubStock());
+		//System.out.println(sm.subMaterialList.get("ê¼¬ì¹˜").getSubStock());
 		
 
-		System.out.println("     ¿øÇÏ½Ã´Â ¼³ÅÁ ÄÚÆÃ ¿É¼ÇÀ» ¼±ÅÃÇØÁÖ¼¼¿ä.");
-		System.out.println("\n     ÇöÀç ³²Àº ¼³ÅÁÀÇ ¾ç : " + Sub.sub.get(1).getStock());
-		System.out.println("  ¢Ñ (1.¾ã°Ô(10g))  (2.º¸Åë(20g))  (3.µÎ²®°Ô(30g))"); 
-		System.out.println("  ¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
-		System.out.print("  ¢º ");
+		System.out.println("     ì›í•˜ì‹œëŠ” ì„¤íƒ• ì½”íŒ… ì˜µì…˜ì„ ì„ íƒí•´ì£¼ì„¸ìš”.");
+		System.out.println("\n     í˜„ì¬ ë‚¨ì€ ì„¤íƒ•ì˜ ì–‘ : " + Sub.sub.get(1).getStock());
+		System.out.println("  â˜ (1.ì–‡ê²Œ(10g))  (2.ë³´í†µ(20g))  (3.ë‘ê»ê²Œ(30g))"); 
+		System.out.println("  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
+		System.out.print("  â–¶ ");
 		
 
 
-		sugarOrder(); //  ·Î ÀÌµ¿
+		sugarOrder(); //  ë¡œ ì´ë™
 	
 	} // sugarPrint() end
 
 
 
 	
-	// ¼³ÅÁ ÁÖ¹®(Àç°í °¨¼Ò)ÇÏ´Â ¸Ş¼Òµå
+	// ì„¤íƒ• ì£¼ë¬¸(ì¬ê³  ê°ì†Œ)í•˜ëŠ” ë©”ì†Œë“œ
 
-	// 1¹ø =  10g  ¡æ 1À» ÀÔ·ÂÇÏ¸é  10 °¨¼Ò
-	// 2¹ø =  20g  ¡æ 2À» ÀÔ·ÂÇÏ¸é  20 °¨¼Ò
-	// 3¹ø =  30g  ¡æ 3À» ÀÔ·ÂÇÏ¸é  30 °¨¼Ò
+	// 1ë²ˆ =  10g  â†’ 1ì„ ì…ë ¥í•˜ë©´  10 ê°ì†Œ
+	// 2ë²ˆ =  20g  â†’ 2ì„ ì…ë ¥í•˜ë©´  20 ê°ì†Œ
+	// 3ë²ˆ =  30g  â†’ 3ì„ ì…ë ¥í•˜ë©´  30 ê°ì†Œ
 	
 	public void sugarOrder() throws IOException 
 	{
@@ -63,40 +62,40 @@ public class Coating
 			if (n == 1) 
 			{
 				Sub.sub.get(1).setStock(Sub.sub.get(1).getStock() - 10);
-				sugarCoatinList.add("¾ãÀ½");
+				sugarCoatinList.add("ì–‡ìŒ");
 				sugarStockList.add(10);
 				break; 
 			} 
 			else if (n == 2) 
 			{
 				Sub.sub.get(1).setStock(Sub.sub.get(1).getStock() - 20);
-				sugarCoatinList.add("º¸Åë");
+				sugarCoatinList.add("ë³´í†µ");
 				sugarStockList.add(20);
 				break; 
 			}
 			else if (n == 3) 
 			{
 				Sub.sub.get(1).setStock(Sub.sub.get(1).getStock() - 30);
-				sugarCoatinList.add("µÎ²¨¿ò");
+				sugarCoatinList.add("ë‘êº¼ì›€");
 				sugarStockList.add(30);
 				break; 
 			}	
 			else 
 			{
-				System.out.println(">> Á¤È®ÇÑ °ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.\n ");
+				System.out.println(">> ì •í™•í•œ ê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.\n ");
 				 sugarPrint();
 			}
 			
 		 }
 
-			// Á¤»ó ÀÔ·Â ÈÄ sFinish() ¸Ş¼Òµå È£Ãâ
+			// ì •ìƒ ì…ë ¥ í›„ sFinish() ë©”ì†Œë“œ í˜¸ì¶œ
 			 sFinish();
 
 	} // sugarOrder() end
 		
 		
-	// ÀÔ·Â°ª * 10 ¸¸Å­ ¼³ÅÁ ¼±ÅÃ Ãâ·Â
-	// ¾È³»¹® Ãâ·Â ÈÄ ¿É¼Ç¼±ÅÃ
+	// ì…ë ¥ê°’ * 10 ë§Œí¼ ì„¤íƒ• ì„ íƒ ì¶œë ¥
+	// ì•ˆë‚´ë¬¸ ì¶œë ¥ í›„ ì˜µì…˜ì„ íƒ
 	public void sFinish() throws IOException 
 	{
 		Scanner sc = new Scanner(System.in);
@@ -107,17 +106,17 @@ public class Coating
 		while (true)
 		{	
 			
-			System.out.printf("\n  (%dg)ÀÇ ¼³ÅÁ ¿É¼ÇÀ» ¼±ÅÃÇÏ¼Ì½À´Ï´Ù.\n", n*10); 
-			System.out.println("  ÅÁÈÄ·ç ±¸¼ºÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù."); 
-			System.out.println("\n  1.´Ù½Ã °í¸£±â 2. Àå¹Ù±¸´Ï ´ã±â  3. Ãë¼ÒÇÏ°í ¸ŞÀÎ¸Ş´º·Î ³ª°¡±â");
-			System.out.println("  ¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
-			System.out.print("  ¢º ");
-			num = sc.nextInt();		 //  Ãâ·ÂµÈ ¿É¼Ç ¼±ÅÃ
+			System.out.printf("\n  (%dg)ì˜ ì„¤íƒ• ì˜µì…˜ì„ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤.\n", n*10); 
+			System.out.println("  íƒ•í›„ë£¨ êµ¬ì„±ì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤."); 
+			System.out.println("\n  1.ë‹¤ì‹œ ê³ ë¥´ê¸° 2. ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸°  3. ì·¨ì†Œí•˜ê³  ë©”ì¸ë©”ë‰´ë¡œ ë‚˜ê°€ê¸°");
+			System.out.println("  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
+			System.out.print("  â–¶ ");
+			num = sc.nextInt();		 //  ì¶œë ¥ëœ ì˜µì…˜ ì„ íƒ
 			System.out.println();
 
-			temp ++;				 // Àå¹Ù±¸´Ï Ãë¼Ò½Ã »ç¿ëµÇ´Â º¯¼ö
+			temp ++;				 // ì¥ë°”êµ¬ë‹ˆ ì·¨ì†Œì‹œ ì‚¬ìš©ë˜ëŠ” ë³€ìˆ˜
 	
-			if (num == 1) // 1¹øÀº ¼±ÅÃÇÑ ¼³ÅÁ ¿É¼ÇÀ» ¹İÈ¯ÇÏ°í ´Ù½Ã ¼±ÅÃÇÏ·¯°¨.
+			if (num == 1) // 1ë²ˆì€ ì„ íƒí•œ ì„¤íƒ• ì˜µì…˜ì„ ë°˜í™˜í•˜ê³  ë‹¤ì‹œ ì„ íƒí•˜ëŸ¬ê°.
 			{
 				Sub.sub.get(1).setStock(Sub.sub.get(1).getStock()+n*10);
 				sugarCoatinList.remove(temp-1);
@@ -127,10 +126,10 @@ public class Coating
 				sugarPrint();
 
 			}
-			else if (num == 2) // 2¹øÀº ¼±ÅÃÇÑ ¼³ÅÁ ¿É¼Ç°ú, ²¿Ä¡ 1°³µµ ¼ÒºñÇÏ¿© Àå¹Ù±¸´Ï¿¡ ´ã±â.
+			else if (num == 2) // 2ë²ˆì€ ì„ íƒí•œ ì„¤íƒ• ì˜µì…˜ê³¼, ê¼¬ì¹˜ 1ê°œë„ ì†Œë¹„í•˜ì—¬ ì¥ë°”êµ¬ë‹ˆì— ë‹´ê¸°.
 			{	
-				for (FruitsProducts randomFruit : selectedFruits)		// selectedFruits ¾È¿¡ ÀÖ´Â ·£´ı ÃßÃµµÈ °úÀÏµéÀ»
-				{														// for ¹®À» ÅëÇØ ±× °úÀÏµéÀÇ Àç°í¸¦ 1°³¾¿ °¨¼Ò
+				for (FruitsProducts randomFruit : selectedFruits)		// selectedFruits ì•ˆì— ìˆëŠ” ëœë¤ ì¶”ì²œëœ ê³¼ì¼ë“¤ì„
+				{														// for ë¬¸ì„ í†µí•´ ê·¸ ê³¼ì¼ë“¤ì˜ ì¬ê³ ë¥¼ 1ê°œì”© ê°ì†Œ
 					int stock = randomFruit.getStock();
 
 					if (stock > 0 && randomFruit.getSize() > 0)
@@ -142,20 +141,20 @@ public class Coating
 
 				Sub.sub.get(2).setStock(Sub.sub.get(2).getStock()-1);
 				kcList.add(1);
-				System.out.println("³²Àº ¼³ÅÁÀÇ ¾ç : " + Sub.sub.get(1).getStock());
-				System.out.println("³²Àº ²¿Ä¡ÀÇ ¾ç : " + Sub.sub.get(2).getStock());
-				System.out.println("±¸¼º ¿Ï·áµÈ ÅÁÈÄ·ç°¡ Àå¹Ù±¸´Ï¿¡ ´ã°å½À´Ï´Ù. ");
+				System.out.println("ë‚¨ì€ ì„¤íƒ•ì˜ ì–‘ : " + Sub.sub.get(1).getStock());
+				System.out.println("ë‚¨ì€ ê¼¬ì¹˜ì˜ ì–‘ : " + Sub.sub.get(2).getStock());
+				System.out.println("êµ¬ì„± ì™„ë£Œëœ íƒ•í›„ë£¨ê°€ ì¥ë°”êµ¬ë‹ˆì— ë‹´ê²¼ìŠµë‹ˆë‹¤. ");
 			
 				RCustom huru = new RCustom();	
 				huru.temp();
 
 				menu.turnOn(); 
 			}
-			else if (num == 3) // 3¹øÀº ¼±ÅÃÇÑ ¼³ÅÁ ¿É¼ÇÀ» ¹İÈ¯ÇÏ°í, ¸ŞÀÎ¸Ş´º·Î ÀÌµ¿
+			else if (num == 3) // 3ë²ˆì€ ì„ íƒí•œ ì„¤íƒ• ì˜µì…˜ì„ ë°˜í™˜í•˜ê³ , ë©”ì¸ë©”ë‰´ë¡œ ì´ë™
 			{
 				Sub.sub.get(1).setStock(Sub.sub.get(1).getStock()+n*10);
 				
-				// Àå¹Ù±¸´Ï ÃÊ±âÈ­ 
+				// ì¥ë°”êµ¬ë‹ˆ ì´ˆê¸°í™” 
 				// temp == 0
 				RCustom huru = new RCustom();
 				huru.resetHuru();
@@ -163,13 +162,13 @@ public class Coating
 				ShopingCart cart = new ShopingCart();
 
 				cart.huruList.remove(cart.huruList.size());		// hashmap
-				cart.priceList.remove(temp-1);					// ¸®½ºÆ®
+				cart.priceList.remove(temp-1);					// ë¦¬ìŠ¤íŠ¸
 
 				sugarCoatinList.remove(temp-1);
 				cart.setKeyCounter(cart.huruList.size()+1);
 
-				sugarStockList.clear(); //¼³ÅÁ ÃÊ±âÈ­
-				kcList.clear(); // ²¿Ä¡ ÃÊ±âÈ­
+				sugarStockList.clear(); //ì„¤íƒ• ì´ˆê¸°í™”
+				kcList.clear(); // ê¼¬ì¹˜ ì´ˆê¸°í™”
 				
 				temp --;
 
@@ -178,7 +177,7 @@ public class Coating
 			}
 			else 
 			{
-				System.out.println(">> Á¤È®ÇÑ °ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.\n " );
+				System.out.println(">> ì •í™•í•œ ê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.\n " );
 				
 			}
 
@@ -188,9 +187,9 @@ public class Coating
 /*
 	public static void main(String[] args) throws IOException
 	{
-		Coating ct =  new Coating();  // CoatingÅ¬·¡½º ÀÎ½ºÅÏ½º »õ¼º
-		Sub s = new Sub(); // SubsidiaryMaterial Å¬·¡½º ÀÎ½ºÅÏ½º »ı¼º
-		Sub.set(); // smÀÇ ¸Ş¼Òµå
+		Coating ct =  new Coating();  // Coatingí´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒˆì„±
+		Sub s = new Sub(); // SubsidiaryMaterial í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		Sub.set(); // smì˜ ë©”ì†Œë“œ
 
 			ct.sugarPrint();
 			ct.sugarOrder();
