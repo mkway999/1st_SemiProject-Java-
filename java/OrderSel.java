@@ -1,12 +1,11 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
 import java.io.IOException;
-
 class OrderSel
 {
-	int oSel;						// ÁÖ¹® ¼±ÅÃ º¯¼ö
-	public final int O_CUSTOM = 1;	// Ä¿½ºÅÒ ÁÖ¹®
-	public final int O_RANDOM = 2;	// ·£´ı ÁÖ¹®
+	int oSel;						// ì£¼ë¬¸ ì„ íƒ ë³€ìˆ˜
+	public final int O_CUSTOM = 1;	// ì»¤ìŠ¤í…€ ì£¼ë¬¸
+	public final int O_RANDOM = 2;	// ëœë¤ ì£¼ë¬¸
 	public final int O_BACK = 3;
 
 	public void orderSelect() throws IOException
@@ -16,19 +15,19 @@ class OrderSel
 		try
 		{
 			do
-			{	System.out.println("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯");
-				System.out.println("¦­         ÁÖ¹®ÇÏ±â                 ¦­");
-				System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´"); 
-				System.out.println("¦­ ¨ç Ä¿½ºÅÒ ÁÖ¹®                   ¦­");
-				System.out.println("¦­                                  ¦­");
-				System.out.println("¦­ ¨è ·£´ı ÁÖ¹®                     ¦­");
-				System.out.println("¦­                                  ¦­"); 
-				System.out.println("¦­ ¨é µÚ·Î °¡±â                     ¦­");
-				System.out.println("¦­                                  ¦­");
-				System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´"); 
-				System.out.print("  ¢º "); 
+			{	System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“");
+				System.out.println("â”ƒ         ì£¼ë¬¸í•˜ê¸°                 â”ƒ");
+				System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"); 
+				System.out.println("â”ƒ â‘  ì»¤ìŠ¤í…€ ì£¼ë¬¸                   â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ");
+				System.out.println("â”ƒ â‘¡ ëœë¤ ì£¼ë¬¸                     â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ"); 
+				System.out.println("â”ƒ â‘¢ ë’¤ë¡œ ê°€ê¸°                     â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ");
+				System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"); 
+				System.out.print("  â–¶ "); 
 				oSel = sc.nextInt();
-				System.out.println("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°"); 
+				System.out.println("â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›"); 
 				System.out.println();
 			}
 			while(oSel < 1 || oSel > 3);	
@@ -36,13 +35,13 @@ class OrderSel
 		
 		catch (InputMismatchException e)
 		{
-			System.out.println("¿Ã¹Ù¸¥ ¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			System.out.println("ì˜¬ë°”ë¥¸ ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 			orderSelect();
 		}
 
 		if (oSel == 1)
 		{
-			//Ä¿½ºÅÒ ÁÖ¹®
+			//ì»¤ìŠ¤í…€ ì£¼ë¬¸
 			RCustom cob1 = new RCustom();
 			cob1.cOrder();
 			cob1.fruitIng();
@@ -50,7 +49,7 @@ class OrderSel
 
 		else if (oSel == 2)
 		{
-			//·£´ı ÁÖ¹®
+			//ëœë¤ ì£¼ë¬¸
 			RandomFruit1212 rd12 = new RandomFruit1212();
 			rd12.print();
 			rd12.runRd();
@@ -59,7 +58,7 @@ class OrderSel
 
 		else if (oSel == 3)
 		{
-			//µÚ·Î°¡±â
+			//ë’¤ë¡œê°€ê¸°
 			VendingMachine vm1 = new VendingMachine();
 			vm1.turnOn();
 		}
