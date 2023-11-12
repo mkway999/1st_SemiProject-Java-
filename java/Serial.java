@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 class Serial
-{															// ¡Ú¡Ú¡Ú¿©±â ¼öÁ¤ÇÏ¼¼¿ä¡Ú¡Ú¡Ú
+{								
 	static File f0 = new File(System.getProperty("user.dir"),"\\data\\FruitsInfo.ser");
 	static File f1 = new File(System.getProperty("user.dir"),"\\data\\SubsInfo.ser");
 	static File f2 = new File(System.getProperty("user.dir"),"\\data\\totahapInfo.ser");
@@ -19,7 +19,7 @@ class Serial
 		Sub.set();
 		subSet();
 		
-		// Á¤ÇÑ¿ï ½ÃÀÛ ¿À·ù³ª¸é Áö¿ì±â
+		// ì •í•œìš¸ ì‹œì‘ ì˜¤ë¥˜ë‚˜ë©´ ì§€ìš°ê¸°
 		totahapSet();
 		dailySalesSet();
 		totalPdHuruListSet();
@@ -109,10 +109,10 @@ class Serial
 		}
 	}
 	
-	// - Á¤ÇÑ¿ï ½ÃÀÛ ¿À·ù³ª¸é Áö¿ì±â
+	// - ì •í•œìš¸ ì‹œì‘ ì˜¤ë¥˜ë‚˜ë©´ ì§€ìš°ê¸°
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	@SuppressWarnings("unchecked")
-		static void totahapSet()	// totahap(ÃÑ¸ÅÃâ) setter
+		static void totahapSet()	// totahap(ì´ë§¤ì¶œ) setter
 		{	
 			Pay py4 = new Pay();
 
@@ -134,7 +134,7 @@ class Serial
 		}
 
 	@SuppressWarnings("unchecked")
-	static void totahapGet()	// totahap(ÃÑ¸ÅÃâ) getter
+	static void totahapGet()	// totahap(ì´ë§¤ì¶œ) getter
 	{	
 		Pay py4 = new Pay();
 
@@ -160,7 +160,7 @@ class Serial
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	@SuppressWarnings("unchecked")
-		static void dailySalesSet()	// dailySales(ÀÏº° ¸ÅÃâ) setter
+		static void dailySalesSet()	// dailySales(ì¼ë³„ ë§¤ì¶œ) setter
 		{	
 
 			try
@@ -181,7 +181,7 @@ class Serial
 		}
 
 	@SuppressWarnings("unchecked")
-	static void dailySalesGet()	// dailySales(ÀÏº° ¸ÅÃâ) getter
+	static void dailySalesGet()	// dailySales(ì¼ë³„ ë§¤ì¶œ) getter
 	{	
 
 		if (f3.exists())
@@ -206,7 +206,7 @@ class Serial
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	@SuppressWarnings("unchecked")
-		static void totalPdHuruListSet()	// totalPdHuruList(°áÁ¦ ¿Ï·áµÈ ÃÑ ÅÁÈÄ·ç ¸®½ºÆ®) setter
+		static void totalPdHuruListSet()	// totalPdHuruList(ê²°ì œ ì™„ë£Œëœ ì´ íƒ•í›„ë£¨ ë¦¬ìŠ¤íŠ¸) setter
 		{	
 
 			try
@@ -227,7 +227,7 @@ class Serial
 		}
 
 		@SuppressWarnings("unchecked")
-	static void totalPdHuruListGet()	// totalPdHuruList(°áÁ¦ ¿Ï·áµÈ ÃÑ ÅÁÈÄ·ç ¸®½ºÆ®) getter
+	static void totalPdHuruListGet()	// totalPdHuruList(ê²°ì œ ì™„ë£Œëœ ì´ íƒ•í›„ë£¨ ë¦¬ìŠ¤íŠ¸) getter
 	{	
 
 		if (f4.exists())
@@ -252,7 +252,7 @@ class Serial
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	@SuppressWarnings("unchecked")
-		static void pdHuruListSet()	// pdHuruList(³¯Â¥ º° °áÁ¦ ¿Ï·áµÈ ÃÑ ÅÁÈÄ·ç ¸®½ºÆ®) setter
+		static void pdHuruListSet()	// pdHuruList(ë‚ ì§œ ë³„ ê²°ì œ ì™„ë£Œëœ ì´ íƒ•í›„ë£¨ ë¦¬ìŠ¤íŠ¸) setter
 		{	
 
 			try
@@ -273,7 +273,7 @@ class Serial
 		}
 
 	@SuppressWarnings("unchecked")
-	static void pdHuruListGet()	// pdHuruList(³¯Â¥ º° °áÁ¦ ¿Ï·áµÈ ÃÑ ÅÁÈÄ·ç ¸®½ºÆ®) getter
+	static void pdHuruListGet()	// pdHuruList(ë‚ ì§œ ë³„ ê²°ì œ ì™„ë£Œëœ ì´ íƒ•í›„ë£¨ ë¦¬ìŠ¤íŠ¸) getter
 	{	
 
 		if (f5.exists())
@@ -298,7 +298,7 @@ class Serial
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	@SuppressWarnings("unchecked")
-		static void fruitCountsSet()	// fruitCounts(ÆÇ¸ÅµÈ °úÀÏÀÇ °¹¼ö) setter
+		static void fruitCountsSet()	// fruitCounts(íŒë§¤ëœ ê³¼ì¼ì˜ ê°¯ìˆ˜) setter
 		{	
 
 			try
@@ -319,7 +319,7 @@ class Serial
 		}
 
 	@SuppressWarnings("unchecked")
-	static void fruitCountsGet()	// fruitCounts(ÆÇ¸ÅµÈ °úÀÏÀÇ °¹¼ö) getter
+	static void fruitCountsGet()	// fruitCounts(íŒë§¤ëœ ê³¼ì¼ì˜ ê°¯ìˆ˜) getter
 	{	
 
 		if (f6.exists())
