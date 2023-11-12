@@ -1,4 +1,4 @@
-// °úÀÏ Ä¿½ºÅÒ ±¸¼º
+// ê³¼ì¼ ì»¤ìŠ¤í…€ êµ¬ì„±
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,39 +8,37 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 
-
-
 public class RCustom
 {
-	int n;													// »ç¿ëÀÚ°¡ ¼±ÅÃÇÏ´Â °úÀÏ°ªÀ» ´ãÀ» º¯¼ö
-	int se;													// °èÀı º¯¼ö
-	int size = 0;											// °úÀÏÀÌ ´ã±â´Â »çÀÌÁî º¯¼ö
-	int sum = 0;											// ÅÁÈÄ·ç ÀüÃ¼°¡°İ º¯¼ö
+	int n;													// ì‚¬ìš©ìê°€ ì„ íƒí•˜ëŠ” ê³¼ì¼ê°’ì„ ë‹´ì„ ë³€ìˆ˜
+	int se;													// ê³„ì ˆ ë³€ìˆ˜
+	int size = 0;											// ê³¼ì¼ì´ ë‹´ê¸°ëŠ” ì‚¬ì´ì¦ˆ ë³€ìˆ˜
+	int sum = 0;											// íƒ•í›„ë£¨ ì „ì²´ê°€ê²© ë³€ìˆ˜
 	int[] temp = new int[10];
 	
  
-	static public List<String> huru = new ArrayList<String>();		// ÅÁÈÄ·ç¸¦ ±¸¼ºÇÏ´Â ¸®½ºÆ® º¯¼ö
+	static public List<String> huru = new ArrayList<String>();		// íƒ•í›„ë£¨ë¥¼ êµ¬ì„±í•˜ëŠ” ë¦¬ìŠ¤íŠ¸ ë³€ìˆ˜
 
 
-	VendingMachine menu = new VendingMachine();				// ¸ŞÀÎ ¸Ş´º Å¬·¡½º ÀÎ½ºÅÏ½º »ı¼º
+	VendingMachine menu = new VendingMachine();				// ë©”ì¸ ë©”ë‰´ í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 
-	static Fruits fru = new Fruits();								// ±âº» °úÀÏ Å¬·¡½º ÀÎ½ºÅÏ½º »ı¼º
+	static Fruits fru = new Fruits();								// ê¸°ë³¸ ê³¼ì¼ í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 
-	Coating sugar = new Coating();							//  ¼³ÅÁÄÚÆÃ Å¬·¡½º ÀÎ½ºÅÏ½º »ı¼º
-	//SubsidiaryMaterial sm = new SubsidiaryMaterial();	    //  ¼³ÅÁ, ²¿Ä¡ Å¬·¡½º ÀÎ½ºÅÏ½º »ı¼º
+	Coating sugar = new Coating();							//  ì„¤íƒ•ì½”íŒ… í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+	//SubsidiaryMaterial sm = new SubsidiaryMaterial();	    //  ì„¤íƒ•, ê¼¬ì¹˜ í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 	
 
-	// °úÀÏ ¸Ş´ºÆÇ Ãâ·ÂÇÏ´Â ¸Ş¼Òµå	
+	// ê³¼ì¼ ë©”ë‰´íŒ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ	
 	public void fruitPrint() throws IOException
 	{
 		
-		// ²¿Ä¡ ºÎÁ·ÇÒ ¶§ ³ª¿À´Â ¸Ş¼Òµå
+		// ê¼¬ì¹˜ ë¶€ì¡±í•  ë•Œ ë‚˜ì˜¤ëŠ” ë©”ì†Œë“œ
 
 		if (Sub.sub.get(1).getStock() < 30 && Sub.sub.get(2).getStock() < 1)
 		{
-			System.out.println("ÇöÀç ¼³ÅÁ°ú ²¿Ä¡°¡ ºÎÁ·ÇÕ´Ï´Ù.");
-			System.out.println("´õ ÀÌ»ó ÁÖ¹® ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-			System.out.println("Àå¹Ù±¸´Ï·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+			System.out.println("í˜„ì¬ ì„¤íƒ•ê³¼ ê¼¬ì¹˜ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+			System.out.println("ë” ì´ìƒ ì£¼ë¬¸ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+			System.out.println("ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™í•©ë‹ˆë‹¤.");
 
 			resetHuru();
 			ShopingCart cart = new ShopingCart();
@@ -49,9 +47,9 @@ public class RCustom
 		}
 		else if (Sub.sub.get(2).getStock() < 1)
 		{
-			System.out.println("²¿Ä¡°¡ ºÎÁ·ÇÕ´Ï´Ù.");
-			System.out.println("´õ ÀÌ»ó ÁÖ¹® ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-			System.out.println("Àå¹Ù±¸´Ï·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+			System.out.println("ê¼¬ì¹˜ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+			System.out.println("ë” ì´ìƒ ì£¼ë¬¸ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+			System.out.println("ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™í•©ë‹ˆë‹¤.");
 
 			resetHuru();
 			ShopingCart cart = new ShopingCart();
@@ -60,9 +58,9 @@ public class RCustom
 		}
 		else if (Sub.sub.get(1).getStock() < 30)
 		{
-			System.out.println("¼³ÅÁÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
-			System.out.println("´õ ÀÌ»ó ÁÖ¹® ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-			System.out.println("Àå¹Ù±¸´Ï·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+			System.out.println("ì„¤íƒ•ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+			System.out.println("ë” ì´ìƒ ì£¼ë¬¸ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+			System.out.println("ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™í•©ë‹ˆë‹¤.");
 
 			RCustom rus = new RCustom();
 			rus.resetHuru();
@@ -73,9 +71,9 @@ public class RCustom
 		}
 		else 	
 		{
-			System.out.println(" \n   ¿øÇÏ´Â °úÀÏÀ» ¼±ÅÃÇØÁÖ¼¼¿ä! (size 6 ÃÊ°ú ¥¹)");
-			System.out.println("   ¡Ø [] ¾ÈÀÇ ¼ıÀÚ°¡ »çÀÌÁî ÀÔ´Ï´Ù.");
-			System.out.println("  ¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
+			System.out.println(" \n   ì›í•˜ëŠ” ê³¼ì¼ì„ ì„ íƒí•´ì£¼ì„¸ìš”! (size 6 ì´ˆê³¼ â…©)");
+			System.out.println("   â€» [] ì•ˆì˜ ìˆ«ìê°€ ì‚¬ì´ì¦ˆ ì…ë‹ˆë‹¤.");
+			System.out.println("  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
 
 			for (int i = 0; i<fru.fruits.size();)
 			{
@@ -86,7 +84,7 @@ public class RCustom
 						temp[i]=j;
 						if (fru.fruits.get(j).getSize() * fru.fruits.get(j).getStock() <= 6)
 						{
-							System.out.printf ("%5d. %s [%d] (Ç°Àı)" ,(i+1), fru.fruits.get(j).getName(),fru.fruits.get(j).getSize());
+							System.out.printf ("%5d. %s [%d] (í’ˆì ˆ)" ,(i+1), fru.fruits.get(j).getName(),fru.fruits.get(j).getSize());
 						}
 
 						else 
@@ -104,13 +102,13 @@ public class RCustom
 			}
 
 			System.out.println();
-			System.out.println("  ¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
+			System.out.println("  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
 			System.out.print("   >> ");
 		}
 	}
 
 		
-	// °úÀÏ ÁÖ¹®ÇÏ´Â ¸Ş¼Òµå
+	// ê³¼ì¼ ì£¼ë¬¸í•˜ëŠ” ë©”ì†Œë“œ
 	public void cOrder() throws IOException
 	{	
 		n = 0;
@@ -124,8 +122,8 @@ public class RCustom
 		{	
 			if (n > fru.fruits.size() || n <- -1)
 			{
-				System.out.println("\n    Àß¸ø ´©¸£¼Ì½À´Ï´Ù!");
-				System.out.println("    ´Ù½Ã ´­·¯ÁÖ¼¼¿ä!");
+				System.out.println("\n    ì˜ëª» ëˆ„ë¥´ì…¨ìŠµë‹ˆë‹¤!");
+				System.out.println("    ë‹¤ì‹œ ëˆŒëŸ¬ì£¼ì„¸ìš”!");
 				flag = true;
 				cOrder();
 			}
@@ -133,11 +131,11 @@ public class RCustom
 		catch (Exception e)
 		{	
 
-			System.out.println("\n    ¿ş¿¡¿¡¿¡¢Ö¿¨¿¡¿¡¢Ö¿¡¿¨¢Ù¿ş¿ì¿¡¿¨¢Ö¡æ¿¡¿¡¿¨¢Ö");
-			System.out.println("    ºñ»ó!!!!!!!! ºñ»ó!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-			System.out.println("    ½É°¢ÇÑ ¿À·ù ¹ß»ı ");
+			System.out.println("\n    ì›¨ì—ì—ì—â†—ì—¥ì—ì—â†—ì—ì—¥â†˜ì›¨ìš°ì—ì—¥â†—â†’ì—ì—ì—¥â†—");
+			System.out.println("    ë¹„ìƒ!!!!!!!! ë¹„ìƒ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			System.out.println("    ì‹¬ê°í•œ ì˜¤ë¥˜ ë°œìƒ ");
 			
-			System.out.println("\n    ÇØ°á ¹æ¹ıÀº ´Ù½Ã ÀÔ·ÂÇÏ±âÀÔ´Ï´Ù~! ^0^");
+			System.out.println("\n    í•´ê²° ë°©ë²•ì€ ë‹¤ì‹œ ì…ë ¥í•˜ê¸°ì…ë‹ˆë‹¤~! ^0^");
 
 			cOrder();
 
@@ -146,7 +144,7 @@ public class RCustom
 
 
 		
-		// ÄÚµå ¼öÁ¤ Àı´ë ±İÁö
+		// ì½”ë“œ ìˆ˜ì • ì ˆëŒ€ ê¸ˆì§€
 		for (int i = 1; i<fru.fruits.size();i++)
 		{	
 			if ((n - i ) == 0)
@@ -167,7 +165,7 @@ public class RCustom
 		{
 			if (fru.fruits.get(n).getSize() == 2)
 			{
-				System.out.println(" ÇöÀç »çÀÌÁî´Â 5ÀÔ´Ï´Ù. [2] »çÀÌÁî¸¦ °¡Áø °úÀÏÀº ¼±ÅÃÀÌ ºÒ°¡´ÉÇÕ´Ï´Ù.");
+				System.out.println(" í˜„ì¬ ì‚¬ì´ì¦ˆëŠ” 5ì…ë‹ˆë‹¤. [2] ì‚¬ì´ì¦ˆë¥¼ ê°€ì§„ ê³¼ì¼ì€ ì„ íƒì´ ë¶ˆê°€ëŠ¥í•©ë‹ˆë‹¤.");
 				size = 5;
 				cOrder();	
 			}
@@ -184,35 +182,35 @@ public class RCustom
 			size -= fru.fruits.get(n).getSize();
 			sum -= fru.fruits.get(n).getPrice();
 			fru.fruits.get(n).setAddCount(fru.fruits.get(n).getAddCount()-1);
-			fru.fruits.get(n).setCTemp(fru.fruits.get(n).getCTemp()-1);									// ÀÓ½Ã º¯¼ö Áõ°¡
-			fru.fruits.get(n).setStock(fru.fruits.get(n).getStock()+1);									// °úÀÏ Àç°í °¨¼Ò
-			fru.fruits.get(n).setSTemp(fru.fruits.get(n).getSTemp()-1);									// ÀÓ½Ã º¯¼ö Áõ°¡
+			fru.fruits.get(n).setCTemp(fru.fruits.get(n).getCTemp()-1);									// ì„ì‹œ ë³€ìˆ˜ ì¦ê°€
+			fru.fruits.get(n).setStock(fru.fruits.get(n).getStock()+1);									// ê³¼ì¼ ì¬ê³  ê°ì†Œ
+			fru.fruits.get(n).setSTemp(fru.fruits.get(n).getSTemp()-1);									// ì„ì‹œ ë³€ìˆ˜ ì¦ê°€
 
 		}
 		
-		size += fru.fruits.get(n).getSize();														// ÅÁÈÄ·ç »çÀÌÁî Áõ°¡
-		sum += fru.fruits.get(n).getPrice();														// ÅÁÈÄ·ç °¡°İ Áõ°¡
+		size += fru.fruits.get(n).getSize();														// íƒ•í›„ë£¨ ì‚¬ì´ì¦ˆ ì¦ê°€
+		sum += fru.fruits.get(n).getPrice();														// íƒ•í›„ë£¨ ê°€ê²© ì¦ê°€
 
-		fru.fruits.get(n).setAddCount(fru.fruits.get(n).getAddCount()+1);							// °úÀÏ ÆÇ¸Å°³¼ö Áõ°¡
-		fru.fruits.get(n).setCTemp(fru.fruits.get(n).getCTemp()+1);									// ÀÓ½Ã º¯¼ö Áõ°¡
-		//fru.fruits.get(n).setTempC(fru.fruits.get(n).getTempC()+1);								// ÀÓ½Ã ÀÓ½Ã¿Ï º¯¼ö Áõ°¡
+		fru.fruits.get(n).setAddCount(fru.fruits.get(n).getAddCount()+1);							// ê³¼ì¼ íŒë§¤ê°œìˆ˜ ì¦ê°€
+		fru.fruits.get(n).setCTemp(fru.fruits.get(n).getCTemp()+1);									// ì„ì‹œ ë³€ìˆ˜ ì¦ê°€
+		//fru.fruits.get(n).setTempC(fru.fruits.get(n).getTempC()+1);								// ì„ì‹œ ì„ì‹œì™„ ë³€ìˆ˜ ì¦ê°€
 
 		
-		// °úÀÏ Àç°í½Ã Ç°Àı
+		// ê³¼ì¼ ì¬ê³ ì‹œ í’ˆì ˆ
 		if (fru.fruits.get(n).getSize() * fru.fruits.get(n).getStock() <= 6)
 		{
-			System.out.println("ÇöÀç °úÀÏÀÇ Àç°í°¡ ºÎÁ·ÇÕ´Ï´Ù.");
-			System.out.println("´Ù¸¥ °úÀÏÀ» ¼±ÅÃÇØÁÖ¼¼¿ä!");
+			System.out.println("í˜„ì¬ ê³¼ì¼ì˜ ì¬ê³ ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+			System.out.println("ë‹¤ë¥¸ ê³¼ì¼ì„ ì„ íƒí•´ì£¼ì„¸ìš”!");
 			size -= fru.fruits.get(n).getSize();
 			sum -= fru.fruits.get(n).getPrice();
 			cOrder();	
 		}
 		
-		fru.fruits.get(n).setStock(fru.fruits.get(n).getStock()-1);									// °úÀÏ Àç°í °¨¼Ò
-		fru.fruits.get(n).setSTemp(fru.fruits.get(n).getSTemp()+1);									// ÀÓ½Ã º¯¼ö Áõ°¡
-		//fru.fruits.get(n).setTempS(fru.fruits.get(n).getTempS()+1);								// ÀÓ½Ã ÀÓ½Ã¿Ï º¯¼ö Áõ°¡
+		fru.fruits.get(n).setStock(fru.fruits.get(n).getStock()-1);									// ê³¼ì¼ ì¬ê³  ê°ì†Œ
+		fru.fruits.get(n).setSTemp(fru.fruits.get(n).getSTemp()+1);									// ì„ì‹œ ë³€ìˆ˜ ì¦ê°€
+		//fru.fruits.get(n).setTempS(fru.fruits.get(n).getTempS()+1);								// ì„ì‹œ ì„ì‹œì™„ ë³€ìˆ˜ ì¦ê°€
 
-		// »çÀÌÁî°¡ 6ÀÏ¶§ 
+		// ì‚¬ì´ì¦ˆê°€ 6ì¼ë•Œ 
 		if (size == 6)
 		{	
 			pushFruits(n);
@@ -230,14 +228,14 @@ public class RCustom
 			{		
 				pushFruits(n);
 
-				System.out.println("»çÀÌÁî : " + size);
-				System.out.println("ÀÌ¸§ : "+ huru);
-				System.out.println("°¡°İ : "+ sum);
+				System.out.println("ì‚¬ì´ì¦ˆ : " + size);
+				System.out.println("ì´ë¦„ : "+ huru);
+				System.out.println("ê°€ê²© : "+ sum);
 
 				int num = 0;
 
 				
-				System.out.println("\n 1. °úÀÏ±¸¼º °è¼ÓÇÏ±â 2. ¼³ÅÁ ½Ã·´ ÀÔÈ÷·¯ °¡±â (°úÀÏ ¼±ÅÃ Á¾·á) 3. ¸Ş´º·Î ³ª°¡±â(ÃÊ±âÈ­)\n");
+				System.out.println("\n 1. ê³¼ì¼êµ¬ì„± ê³„ì†í•˜ê¸° 2. ì„¤íƒ• ì‹œëŸ½ ì…íˆëŸ¬ ê°€ê¸° (ê³¼ì¼ ì„ íƒ ì¢…ë£Œ) 3. ë©”ë‰´ë¡œ ë‚˜ê°€ê¸°(ì´ˆê¸°í™”)\n");
 				System.out.print(" >> ");	
 				num = sc.nextInt();
 				System.in.skip(2);
@@ -249,7 +247,7 @@ public class RCustom
 				} 
 				else if (num == 2)
 				{
-					ShopingCart ob = new ShopingCart();		// ¿©±â°¡ ÀÔ·Â
+					ShopingCart ob = new ShopingCart();		// ì—¬ê¸°ê°€ ì…ë ¥
 					ob.setHuruPrice(sum);
 					ob.huruInput();	
 
@@ -269,8 +267,8 @@ public class RCustom
 
 				{	System.in.skip(2);
 					n = 0;
-					System.out.println("Àß¸ø ´©¸£¼Ì½À´Ï´Ù.");
-					System.out.println("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä!");
+					System.out.println("ì˜ëª» ëˆ„ë¥´ì…¨ìŠµë‹ˆë‹¤.");
+					System.out.println("ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”!");
 					cOrder();
 					break;	
 
@@ -281,13 +279,13 @@ public class RCustom
 
 	}
 	
-	// ¼±ÅÃµÈ °úÀÏÀ» ´ã´Â ¸Ş¼Òµå
+	// ì„ íƒëœ ê³¼ì¼ì„ ë‹´ëŠ” ë©”ì†Œë“œ
 	public void pushFruits(int name)
 	{	
 		huru.add(fru.fruits.get(name).getName());	
 	}
 
-	//ÀÓ½Ã ÃÊ±âÈ­ º¯¼ö
+	//ì„ì‹œ ì´ˆê¸°í™” ë³€ìˆ˜
 	public void temp()
 	{	
 		for (int m = 1;  m <= fru.fruits.size() ; m++)
@@ -298,12 +296,12 @@ public class RCustom
 			fru.fruits.get(m).setSTemp(0);
 			fru.fruits.get(m).setCTemp(0);
 		
-			//System.out.println("Å×½ºÆ® ¿ë : " + fru.fruits.get(m).getTempS());
+			//System.out.println("í…ŒìŠ¤íŠ¸ ìš© : " + fru.fruits.get(m).getTempS());
 		}
 
 	} 
 
-	// ±¸¼ºÀ» Ãë¼ÒÇßÀ» ¶§ ·Ñ¹éÇÏ´Â ¸Ş¼Òµå
+	// êµ¬ì„±ì„ ì·¨ì†Œí–ˆì„ ë•Œ ë¡¤ë°±í•˜ëŠ” ë©”ì†Œë“œ
 	public void resetHuru() throws IOException
 	{
 		for (int m = 1; m <= fru.fruits.size() ; m++)
@@ -313,8 +311,8 @@ public class RCustom
 			fru.fruits.get(m).setStock(fru.fruits.get(m).getStock() + (fru.fruits.get(m).getSTemp()));
 			fru.fruits.get(m).setAddCount(fru.fruits.get(m).getAddCount() - (fru.fruits.get(m).getCTemp()));
 			
-			//System.out.println(fru.fruits.get(m).getName() + " ÀÇ ÇöÀç Àç°í: " + fru.fruits.get(m).getStock());
-			//System.out.println(fru.fruits.get(m).getName() + " ÀÇ Ãß°¡ µÉ Àç°í: " + fru.fruits.get(m).getSTemp());
+			//System.out.println(fru.fruits.get(m).getName() + " ì˜ í˜„ì¬ ì¬ê³ : " + fru.fruits.get(m).getStock());
+			//System.out.println(fru.fruits.get(m).getName() + " ì˜ ì¶”ê°€ ë  ì¬ê³ : " + fru.fruits.get(m).getSTemp());
 		
 			fru.fruits.get(m).setSTemp(0);
 			fru.fruits.get(m).setCTemp(0);
@@ -324,12 +322,12 @@ public class RCustom
 		
 	}
 	
-	// Àå¹Ù±¸´Ï ºñ¿ì±â ÇßÀ»¶§ Àç°í ÃÊ±âÈ­
+	// ì¥ë°”êµ¬ë‹ˆ ë¹„ìš°ê¸° í–ˆì„ë•Œ ì¬ê³  ì´ˆê¸°í™”
 	public void allReset()
 	{
 		for (int m = 1; m <= fru.fruits.size() ; m++)
 		{	
-			//System.out.println(fru.fruits.get(m).getName() + " ÀÇ ÇöÀç Àç°í: " + fru.fruits.get(m).getStock());				// Å×½ºÆ® ¿ë (Áö¿öµµ ¹«¹æ)
+			//System.out.println(fru.fruits.get(m).getName() + " ì˜ í˜„ì¬ ì¬ê³ : " + fru.fruits.get(m).getStock());				// í…ŒìŠ¤íŠ¸ ìš© (ì§€ì›Œë„ ë¬´ë°©)
 
 			fru.fruits.get(m).setSTemp(fru.fruits.get(m).getSTemp() + fru.fruits.get(m).getTempS());
 			fru.fruits.get(m).setStock(fru.fruits.get(m).getStock() + (fru.fruits.get(m).getSTemp()));
@@ -338,9 +336,9 @@ public class RCustom
 			fru.fruits.get(m).setAddCount(fru.fruits.get(m).getAddCount() - (fru.fruits.get(m).getCTemp()));
 			
 			
-			//System.out.println(fru.fruits.get(m).getName() + " ÀÇ Ãß°¡ µÉ Àç°í: " + fru.fruits.get(m).getSTemp());			// Å×½ºÆ® ¿ë (Áö¿öµµ ¹«¹æ)
+			//System.out.println(fru.fruits.get(m).getName() + " ì˜ ì¶”ê°€ ë  ì¬ê³ : " + fru.fruits.get(m).getSTemp());			// í…ŒìŠ¤íŠ¸ ìš© (ì§€ì›Œë„ ë¬´ë°©)
 		
-			// ÀÓ½Ã º¯¼ö ÃÊ±âÈ­ (¿ø·¡ Àç°íº¸´Ù °ªÀÌ ´ÃÁö ¾Ê°Ô ÇÏ±â À§ÇØ¼­)
+			// ì„ì‹œ ë³€ìˆ˜ ì´ˆê¸°í™” (ì›ë˜ ì¬ê³ ë³´ë‹¤ ê°’ì´ ëŠ˜ì§€ ì•Šê²Œ í•˜ê¸° ìœ„í•´ì„œ)
 			fru.fruits.get(m).setSTemp(0);
 			fru.fruits.get(m).setCTemp(0);
 			fru.fruits.get(m).setTempC(0);
@@ -352,14 +350,14 @@ public class RCustom
 	
 	}
 	
-	// ¼³ÅÁ ÄÚÆÃ ¸Ş¼Òµå
+	// ì„¤íƒ• ì½”íŒ… ë©”ì†Œë“œ
 	public void sugarCoating() throws IOException
 	{	
 		//size = 6;
-		System.out.println("\n »çÀÌÁî¸¦ ¸ğµÎ Ã¤¿ì¼Ì½À´Ï´Ù.");
-		System.out.println(" ¼³ÅÁ ½Ã·´À» ¼±ÅÃÇÏ¼¼¿ä!");
+		System.out.println("\n ì‚¬ì´ì¦ˆë¥¼ ëª¨ë‘ ì±„ìš°ì…¨ìŠµë‹ˆë‹¤.");
+		System.out.println(" ì„¤íƒ• ì‹œëŸ½ì„ ì„ íƒí•˜ì„¸ìš”!");
 		
-		ShopingCart ob = new ShopingCart();		// ¿©±â°¡ ÀÔ·Â
+		ShopingCart ob = new ShopingCart();		// ì—¬ê¸°ê°€ ì…ë ¥
 		ob.setHuruPrice(sum);
 		ob.huruInput();
 
@@ -374,10 +372,10 @@ public class RCustom
 		Serial.subGet();
 		RCustom ob = new RCustom();
 
-		Coating sugar = new Coating();					  //  ¼³ÅÁÄÚÆÃ Å¬·¡½º ÀÎ½ºÅÏ½º »ı¼º
+		Coating sugar = new Coating();					  //  ì„¤íƒ•ì½”íŒ… í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 
-		SubsidiaryMaterial sm = new SubsidiaryMaterial(); //  ¼³ÅÁ, ²¿Ä¡ Å¬·¡½º ÀÎ½ºÅÏ½º »ı¼º
-		sm.subMaterialInput(); // smÀÇ ¸Ş¼Òµå
+		SubsidiaryMaterial sm = new SubsidiaryMaterial(); //  ì„¤íƒ•, ê¼¬ì¹˜ í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		sm.subMaterialInput(); // smì˜ ë©”ì†Œë“œ
 
 		ob.cOrder();
 		ob.fruitIng();
