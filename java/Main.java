@@ -1,19 +1,18 @@
 import java.io.IOException;
 import java.time.LocalDate;
-
 public class Main
 {	
 	public static void main(String[] args) throws IOException
 	{	
 		Certify cf = new Certify();
-		AdMain am = new AdMain(); //CuMain cm = new CuMain(); ÆÇ¸Å¸ğµå ÀÎ½ºÅÏ½º »ı¼º ±¸¹®
+		AdMain am = new AdMain(); //CuMain cm = new CuMain(); íŒë§¤ëª¨ë“œ ì¸ìŠ¤í„´ìŠ¤ ìƒì„± êµ¬ë¬¸
 		
-		cf.adCertify();	// °ü¸®ÀÚ ÄÚµå ÆÇº°ÇÏ´Â ¸Ş¼Òµå ½ÇÇà°á°ú°¡ false¶ó¸é ÇÁ·Î±×·¥ Á¾·á. Áï, ÀÌÇÏ ÄÚµå ½ÇÇà ¾È µÊ
-						// ½ÇÇà °á°ú°¡ ÂüÀÌ¶ó¸é ÀÌÇÏ ÄÚµå ½ÇÇà°¡´É
+		cf.adCertify();	// ê´€ë¦¬ì ì½”ë“œ íŒë³„í•˜ëŠ” ë©”ì†Œë“œ ì‹¤í–‰ê²°ê³¼ê°€ falseë¼ë©´ í”„ë¡œê·¸ë¨ ì¢…ë£Œ. ì¦‰, ì´í•˜ ì½”ë“œ ì‹¤í–‰ ì•ˆ ë¨
+						// ì‹¤í–‰ ê²°ê³¼ê°€ ì°¸ì´ë¼ë©´ ì´í•˜ ì½”ë“œ ì‹¤í–‰ê°€ëŠ¥
 		Serial.fruitGet();
 		Serial.subGet();
 
-		// Á¤ÇÑ¿ï ½ÃÀÛ - ¿À·ù³ª¸é Áö¿ì±â
+		// ì •í•œìš¸ ì‹œì‘ - ì˜¤ë¥˜ë‚˜ë©´ ì§€ìš°ê¸°
 		Serial.totahapGet();
 		Serial.dailySalesGet();
 		Serial.totalPdHuruListGet();
@@ -23,7 +22,7 @@ public class Main
 		do
 		{
 			am.turnOn();
-			am.switchSM(); //cm.cuSelect(); ÆÇ¸Å¸ğµå ½ÇÇà ±¸¹®
+			am.switchSM(); //cm.cuSelect(); íŒë§¤ëª¨ë“œ ì‹¤í–‰ êµ¬ë¬¸
 			
 		}
 		while (true);
