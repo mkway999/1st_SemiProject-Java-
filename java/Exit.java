@@ -1,6 +1,4 @@
-/*
-[ÇÁ·Î±×·¥ Á¾·á Å¬·¡½º]
-*/
+// [í”„ë¡œê·¸ë¨ ì¢…ë£Œ í´ë˜ìŠ¤]
 class Exit
 {
 	public static void exit()
@@ -8,14 +6,14 @@ class Exit
 		Serial.fruitSet();
 		Serial.subSet();
 		
-		// Á¤ÇÑ¿ï ½ÃÀÛ - ¿À·ù³ª¸é Áö¿ì±â
+		// ì •í•œìš¸ ì‹œì‘ - ì˜¤ë¥˜ë‚˜ë©´ ì§€ìš°ê¸°
 		Serial.totahapSet();
 		Serial.dailySalesSet();
 		Serial.totalPdHuruListSet();
 		Serial.pdHuruListSet();
 		Serial.fruitCountsSet();
 
-		System.out.println("\nÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+		System.out.println("\ní”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 		System.exit(-1);
 	}
 }
