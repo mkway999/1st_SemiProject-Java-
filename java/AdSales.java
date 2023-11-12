@@ -26,7 +26,6 @@ import java.io.Serializable;
 import java.util.Collections;
 import java.util.Calendar;	
 import java.util.InputMismatchException;
-
 class AdSales implements Serializable
 {	
 	public static Map<LocalDate, List<Integer>> dailySales = new HashMap<>();
