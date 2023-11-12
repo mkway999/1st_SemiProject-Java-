@@ -1,12 +1,11 @@
 import java.io.IOException;
-
 interface VmMenu
 {
-	public void turnOn() throws IOException;		// ¸Ş´º È£Ãâ ¸Ş¼Òµå
+	public void turnOn() throws IOException;		// ë©”ë‰´ í˜¸ì¶œ ë©”ì†Œë“œ
 
-	public void menuDisp();		// ¸Ş´º Ãâ·Â ¸Ş¼Òµå
+	public void menuDisp();		// ë©”ë‰´ ì¶œë ¥ ë©”ì†Œë“œ
 
-	public void menuSelect() throws IOException;  // ¸Ş´º ¼±ÅÃ ¸Ş¼Òµå
+	public void menuSelect() throws IOException;  // ë©”ë‰´ ì„ íƒ ë©”ì†Œë“œ
 
-	public void menuRun() throws IOException;	// ¸Ş´º ½ÇÇà ¸Ş¼Òµå
+	public void menuRun() throws IOException;	// ë©”ë‰´ ì‹¤í–‰ ë©”ì†Œë“œ
 }
