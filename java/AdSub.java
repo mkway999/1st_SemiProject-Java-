@@ -16,7 +16,6 @@
 */
 import java.util.Scanner;
 import java.io.IOException;
-
 class AdSub extends AdSetting
 {
 	//#1
