@@ -1,17 +1,16 @@
 /*
-[¸ÅÃâÁ¤º¸ Á¶È¸]
+[ë§¤ì¶œì •ë³´ ì¡°íšŒ]
+ë©”ì¸ì—ì„œ â‘ ì„ ì„ íƒí•˜ë©´ í•´ë‹¹ ì‹œìŠ¤í…œ ì ‘ê·¼
 
-¸ŞÀÎ¿¡¼­ ¨çÀ» ¼±ÅÃÇÏ¸é ÇØ´ç ½Ã½ºÅÛ Á¢±Ù
+â‘  ë§¤ì¶œì •ë³´ ì¡°íšŒ
+ 1) ì´ ë§¤ì¶œ ì •ë³´ ì¡°íšŒ
+ 2) ê³¼ì¼ë³„ ë§¤ì¶œ ì •ë³´ ì¡°íšŒ
+ 3) ì¡°í•©ë³„(nê°€ì§€) ë§¤ì¶œ ì •ë³´ ì¡°íšŒ
+ 4) ë’¤ë¡œê°€ê¸°
 
-¨ç ¸ÅÃâÁ¤º¸ Á¶È¸
- 1) ÃÑ ¸ÅÃâ Á¤º¸ Á¶È¸
- 2) °úÀÏº° ¸ÅÃâ Á¤º¸ Á¶È¸
- 3) Á¶ÇÕº°(n°¡Áö) ¸ÅÃâ Á¤º¸ Á¶È¸
- 4) µÚ·Î°¡±â
+*ë©”ì†Œë“œ êµ¬ì„±*
 
-*¸Ş¼Òµå ±¸¼º*
-
-#1 1) ~ 4) ±â´ÉÀ» ¼±ÅÃÇÏ´Â ¸Ş¼Òµå
+#1 1) ~ 4) ê¸°ëŠ¥ì„ ì„ íƒí•˜ëŠ” ë©”ì†Œë“œ
 #2 
 #3 
 #4 
@@ -45,32 +44,32 @@ class AdSales implements Serializable
 	void saleSelect() throws IOException
 	{	
 		Scanner sc = new Scanner(System.in);
-		int number = 0;			// ¼±ÅÃ°ª ÀúÀåÇÒ º¯¼ö
-		boolean temp = false;	// ¹İº¹¹®¿ë ºÒ¸° º¯¼ö
+		int number = 0;			// ì„ íƒê°’ ì €ì¥í•  ë³€ìˆ˜
+		boolean temp = false;	// ë°˜ë³µë¬¸ìš© ë¶ˆë¦° ë³€ìˆ˜
 
-		System.out.println("\n\t[¸ÅÃâ ¹× ÆÇ¸ÅÅë°è]");
-		System.out.println("[1] ¸ÅÃâ Á¶È¸");
-		System.out.println("[2] °úÀÏº° ÆÇ¸Å °¹¼ö Á¶È¸");
-		System.out.println("[3] Á¶ÇÕº° ÅÁÈÄ·ç ÆÇ¸Å °¹¼ö Á¶È¸");
-		System.out.println("[4] µÚ·Î°¡±â");
+		System.out.println("\n\t[ë§¤ì¶œ ë° íŒë§¤í†µê³„]");
+		System.out.println("[1] ë§¤ì¶œ ì¡°íšŒ");
+		System.out.println("[2] ê³¼ì¼ë³„ íŒë§¤ ê°¯ìˆ˜ ì¡°íšŒ");
+		System.out.println("[3] ì¡°í•©ë³„ íƒ•í›„ë£¨ íŒë§¤ ê°¯ìˆ˜ ì¡°íšŒ");
+		System.out.println("[4] ë’¤ë¡œê°€ê¸°");
 
-		do	// »ç¿ëÀÚ°¡ Á¦´ë·Î(1~4 Á¤¼öÇü) ÀÔ·ÂÇÒ¶§±îÁö ¹İº¹
+		do	// ì‚¬ìš©ìê°€ ì œëŒ€ë¡œ(1~4 ì •ìˆ˜í˜•) ì…ë ¥í• ë•Œê¹Œì§€ ë°˜ë³µ
 		{
-			System.out.print("\n½ÇÇàÇÒ ±â´ÉÀ» ¼±ÅÃÇÏ¼¼¿ä. : ");
-			try	// ¸» ¾È µè°í ÀÌ»óÇÏ°Ô ÀÔ·ÂÇßÀ»¶§ ´ëºñ¿ë
+			System.out.print("\nì‹¤í–‰í•  ê¸°ëŠ¥ì„ ì„ íƒí•˜ì„¸ìš”. : ");
+			try	// ë§ ì•ˆ ë“£ê³  ì´ìƒí•˜ê²Œ ì…ë ¥í–ˆì„ë•Œ ëŒ€ë¹„ìš©
 			{
 				number = sc.nextInt();
-				temp = false;	// ¿©±â´Â ¿À·ù°¡ ¾È ³ª¾ß ½ÇÇà
+				temp = false;	// ì—¬ê¸°ëŠ” ì˜¤ë¥˜ê°€ ì•ˆ ë‚˜ì•¼ ì‹¤í–‰
 			}
 			catch (Exception e)
 			{
-				System.out.println("\n¡ØÀÔ·Â¿À·ù¡Ø");
-				System.out.println("1ÀÌ»ó 4ÀÌÇÏÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+				System.out.println("\nâ€»ì…ë ¥ì˜¤ë¥˜â€»");
+				System.out.println("1ì´ìƒ 4ì´í•˜ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 				sc.nextLine();
-				temp = true;	// ¿À·ù³ª¼­ temp true·Î ¹Ù²î¸é
+				temp = true;	// ì˜¤ë¥˜ë‚˜ì„œ temp trueë¡œ ë°”ë€Œë©´
 			}
 		}
-		while (temp);			// Á¦´ë·Î ÇÒ ¶§±îÁö ¹İº¹
+		while (temp);			// ì œëŒ€ë¡œ í•  ë•Œê¹Œì§€ ë°˜ë³µ
 		srGo(number);
 	}
 
@@ -81,91 +80,91 @@ class AdSales implements Serializable
 
 		switch (number)
 		{
-			case 1 : totalSalesInquiry();break;	// ÃÑ ¸ÅÃâ Á¶È¸
-			case 2 : fruitsNumOfSales();break;	// °úÀÏº° ¸ÅÃâ Á¶È¸
-			case 3 : combiOfhuru();break;		// Á¶ÇÕº°(n°¡Áö) ¸ÅÃâ Á¤º¸ Á¶È¸
-			case 4 : am3.turnOn(); break;	// µÚ·Î°¡±â
+			case 1 : totalSalesInquiry();break;	// ì´ ë§¤ì¶œ ì¡°íšŒ
+			case 2 : fruitsNumOfSales();break;	// ê³¼ì¼ë³„ ë§¤ì¶œ ì¡°íšŒ
+			case 3 : combiOfhuru();break;		// ì¡°í•©ë³„(nê°€ì§€) ë§¤ì¶œ ì •ë³´ ì¡°íšŒ
+			case 4 : am3.turnOn(); break;	// ë’¤ë¡œê°€ê¸°
 
-			// Á¤¼öÇüÀº ÀÔ·ÂÇß´Âµ¥ 1ÀÌ»ó 4ÀÌÇÏ°¡ ¾Æ´Ï¶ó¸é
-			default : System.out.println("\nÀß¸øµÈ ¼±ÅÃÀÔ´Ï´Ù.");
-					System.out.println("1ÀÌ»ó 4ÀÌÇÏÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+			// ì •ìˆ˜í˜•ì€ ì…ë ¥í–ˆëŠ”ë° 1ì´ìƒ 4ì´í•˜ê°€ ì•„ë‹ˆë¼ë©´
+			default : System.out.println("\nì˜ëª»ëœ ì„ íƒì…ë‹ˆë‹¤.");
+					System.out.println("1ì´ìƒ 4ì´í•˜ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 					saleSelect();
 		}
 	}
 
-	void totalSalesInquiry() throws IOException	// ÃÑ ¸ÅÃâ Á¶È¸
+	void totalSalesInquiry() throws IOException	// ì´ ë§¤ì¶œ ì¡°íšŒ
 	{
 		//Pay ppay = new Pay();
 
-		//System.out.println("ÃÑ¸ÅÃâ " + ppay.gettotahap());
+		//System.out.println("ì´ë§¤ì¶œ " + ppay.gettotahap());
 	
 		saleCal();
 
-		System.out.println("\n\t[¸ÅÃâ Á¶È¸]\n");
+		System.out.println("\n\t[ë§¤ì¶œ ì¡°íšŒ]\n");
 		
 			if (s != 0)
 			{
-				System.out.printf("¿À´ÃÀÇ ³¯Â¥: %d-%d-%d\n", y,m,d);
+				System.out.printf("ì˜¤ëŠ˜ì˜ ë‚ ì§œ: %d-%d-%d\n", y,m,d);
 				System.out.println();
-				System.out.printf("%d-%d-%d ¸ÅÃâ: %d¿ø\n", y,m,d,s);
+				System.out.printf("%d-%d-%d ë§¤ì¶œ: %dì›\n", y,m,d,s);
 				System.out.println();
 			}
 
 			else
 			{
-				System.out.println("ÇØ´ç ³¯Â¥¿¡ ´ëÇÑ ¸ÅÃâ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				System.out.println("í•´ë‹¹ ë‚ ì§œì— ëŒ€í•œ ë§¤ì¶œ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 	
 
 		
 			if (s1 != 0)
 			{		
-				System.out.printf("%d-%d-%d ¸ÅÃâ: %d¿ø\n", y,m,d-1,s1 );
+				System.out.printf("%d-%d-%d ë§¤ì¶œ: %dì›\n", y,m,d-1,s1 );
 				System.out.println();
 			}
 
 			else
 			{
-				System.out.println("ÇØ´ç ³¯Â¥¿¡ ´ëÇÑ ¸ÅÃâ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				System.out.println("í•´ë‹¹ ë‚ ì§œì— ëŒ€í•œ ë§¤ì¶œ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 		
 			
 			if (s2 != 0)
 			{
-				System.out.printf("%d-%d-%d ¸ÅÃâ: %d¿ø\n", y,m,d-2,s2 );
+				System.out.printf("%d-%d-%d ë§¤ì¶œ: %dì›\n", y,m,d-2,s2 );
 				System.out.println();
 			}
 
 			else
 			{
-				System.out.println("ÇØ´ç ³¯Â¥¿¡ ´ëÇÑ ¸ÅÃâ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				System.out.println("í•´ë‹¹ ë‚ ì§œì— ëŒ€í•œ ë§¤ì¶œ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 		
 			
 			if (s3 != 0)
 			{
 				
-				System.out.printf("%d-%d-%d ¸ÅÃâ: %d¿ø\n", y,m,d-3,s3 );
+				System.out.printf("%d-%d-%d ë§¤ì¶œ: %dì›\n", y,m,d-3,s3 );
 				System.out.println();
 			}
 
 			else
 			{
-				System.out.println("ÇØ´ç ³¯Â¥¿¡ ´ëÇÑ ¸ÅÃâ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				System.out.println("í•´ë‹¹ ë‚ ì§œì— ëŒ€í•œ ë§¤ì¶œ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			System.out.println("´©Àû ¸ÅÃâ: " + totalSale+"¿ø");
+			System.out.println("ëˆ„ì  ë§¤ì¶œ: " + totalSale+"ì›");
 			System.out.println();
 	
 			saleSelect();
 	}
 	
-	void fruitsNumOfSales() throws IOException // °úÀÏº° °¹¼ö Á¶È¸
+	void fruitsNumOfSales() throws IOException // ê³¼ì¼ë³„ ê°¯ìˆ˜ ì¡°íšŒ
 	{
 		Pay ppay = new Pay();
 		//System.out.println(ppay.fruitCounts);
 		
-		System.out.println("\n\t[°úÀÏº° ÆÇ¸Å °¹¼ö Á¶È¸]\n");
+		System.out.println("\n\t[ê³¼ì¼ë³„ íŒë§¤ ê°¯ìˆ˜ ì¡°íšŒ]\n");
 
 		ppay.countFruits();
 
@@ -173,14 +172,14 @@ class AdSales implements Serializable
 		saleSelect();
 	}
 
-	void combiOfhuru() throws IOException	// Á¶ÇÕº° Á¶È¸
+	void combiOfhuru() throws IOException	// ì¡°í•©ë³„ ì¡°íšŒ
 	{
 		Pay.typefru();
 		
 		saleSelect();
 	}
 
-	public void addSale(LocalDate date, int saleAmount) {	// ³¯Â¥º° °¹¼ö Ãß°¡ - pay ¿¡¼­ Ãß°¡ Áß
+	public void addSale(LocalDate date, int saleAmount) {	// ë‚ ì§œë³„ ê°¯ìˆ˜ ì¶”ê°€ - pay ì—ì„œ ì¶”ê°€ ì¤‘
         
         if (dailySales.containsKey(date)) {
             
@@ -193,7 +192,7 @@ class AdSales implements Serializable
         }
 	}
 
-	public void printSalesByDate() {						// ³¯Â¥º° °¹¼ö Á¶È¸
+	public void printSalesByDate() {						// ë‚ ì§œë³„ ê°¯ìˆ˜ ì¡°íšŒ
         for (Map.Entry<LocalDate, List<Integer>> entry : dailySales.entrySet()) {
             LocalDate date = entry.getKey();
             List<Integer> saleAmounts = entry.getValue();
@@ -203,7 +202,7 @@ class AdSales implements Serializable
                 totalSaleAmount += saleAmount;
             }
 
-            System.out.println("³¯Â¥: " + date + ", ÃÑ ¸ÅÃâ: " + totalSaleAmount);
+            System.out.println("ë‚ ì§œ: " + date + ", ì´ ë§¤ì¶œ: " + totalSaleAmount);
         }
     }
 
