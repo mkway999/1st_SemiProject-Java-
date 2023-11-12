@@ -1,20 +1,21 @@
 /*
-[°úÀÏ °´Ã¼ÀÇ ±¸¼º¿ä¼Ò]
+[ê³¼ì¼ ê°ì²´ì˜ êµ¬ì„±ìš”ì†Œ]
 */
 import java.io.Serializable;
+
 class FruitsProducts implements Serializable
 {
-	private String name;	// ÀÌ¸§
-	private int price;		// °¡°İ
-	private int stock;		// Àç°í
+	private String name;	// ì´ë¦„
+	private int price;		// ê°€ê²©
+	private int stock;		// ì¬ê³ 
 	
-	private int size;		// »çÀÌÁî
-	private int count;      //-- °è»ê Ä«¿îÅÍ /°áÁ¦½Ã 0 ÃÊ±âÈ­ 
-	private int	addCount;   //-- °úÀÏ ´©Àû Ä«¿îÅÍ /°áÁ¦½Ã Ä«¿îÆ®¸¸Å­ ´©Àû
+	private int size;		// ì‚¬ì´ì¦ˆ
+	private int count;      //-- ê³„ì‚° ì¹´ìš´í„° /ê²°ì œì‹œ 0 ì´ˆê¸°í™” 
+	private int	addCount;   //-- ê³¼ì¼ ëˆ„ì  ì¹´ìš´í„° /ê²°ì œì‹œ ì¹´ìš´íŠ¸ë§Œí¼ ëˆ„ì 
 
-	// ¡Ú new!! ¡Ú
-	private int cTemp;		//-- ÃÊ±âÈ­½Ã ´©Àû Ä«¿îÆ® °¨¼Ò¸¦ À§ÇÑ º¯¼ö 
-	private int sTemp;		// ÃÊ±âÈ­½Ã Àç°í Áõ°¡¸¦ À§ÇÑ ÀÓ½Ã º¯¼ö
+	// â˜… new!! â˜…
+	private int cTemp;		//-- ì´ˆê¸°í™”ì‹œ ëˆ„ì  ì¹´ìš´íŠ¸ ê°ì†Œë¥¼ ìœ„í•œ ë³€ìˆ˜ 
+	private int sTemp;		// ì´ˆê¸°í™”ì‹œ ì¬ê³  ì¦ê°€ë¥¼ ìœ„í•œ ì„ì‹œ ë³€ìˆ˜
 
 	private int tempC;
 	private int tempS;
@@ -48,7 +49,7 @@ class FruitsProducts implements Serializable
 		this.addCount = addCount;
 	}
 
-	// ¡Ú new!! ¡Ú
+	// â˜… new!! â˜…
 	public void setCTemp(int cTemp)
 	{
 		this.cTemp = cTemp;
@@ -58,7 +59,7 @@ class FruitsProducts implements Serializable
 		this.sTemp = sTemp;
 	}
 
-		// ¡Ú new!! new!!  ¡Ú
+		// â˜… new!! new!!  â˜…
 	public void setTempC(int tempC)
 	{
 		this.tempC = tempC;
@@ -90,7 +91,7 @@ class FruitsProducts implements Serializable
 		return addCount;
 	}
 
-	// ¡Ú new!! ¡Ú
+	// â˜… new!! â˜…
 	public int getCTemp()
 	{
 		return cTemp;
@@ -100,7 +101,7 @@ class FruitsProducts implements Serializable
 		return sTemp;
 	}
 
-		// ¡Ú new!! new!!  ¡Ú
+		// â˜… new!! new!!  â˜…
 	public int getTempC()
 	{
 		return tempC;
