@@ -32,7 +32,6 @@
 */
 import java.util.Scanner;
 import java.io.IOException;
-
 class AdFruit extends AdSetting 
 {
 	//#1
