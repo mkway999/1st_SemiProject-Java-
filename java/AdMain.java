@@ -1,36 +1,35 @@
 /*
-[°ü¸®ÀÚ ¸ŞÀÎ¸Ş´º Å¬·¡½º]
+[ê´€ë¦¬ì ë©”ì¸ë©”ë‰´ í´ë˜ìŠ¤]
+ê´€ë¦¬ì ë¡œê·¸ì¸(ì½”ë“œì¸ì¦) ì„±ê³µì‹œ ì ‘ê·¼í•  ìˆ˜ ìˆìœ¼ë©°
+ë©”ì¸ì—ì„œ ì„ íƒí•˜ëŠ” ê¸°ëŠ¥ì€ ì´ 4ê°€ì§€, ê·¸ ì™¸ ì„¸ë¶€ì ì¸ ì„ íƒì§€ëŠ” ë‹¤ìŒê³¼ ê°™ë‹¤.
 
-°ü¸®ÀÚ ·Î±×ÀÎ(ÄÚµåÀÎÁõ) ¼º°ø½Ã Á¢±ÙÇÒ ¼ö ÀÖÀ¸¸ç
-¸ŞÀÎ¿¡¼­ ¼±ÅÃÇÏ´Â ±â´ÉÀº ÃÑ 4°¡Áö, ±× ¿Ü ¼¼ºÎÀûÀÎ ¼±ÅÃÁö´Â ´ÙÀ½°ú °°´Ù.
+â‘  ë§¤ì¶œì •ë³´ ì¡°íšŒ
+ 1) ì´ ë§¤ì¶œ ì •ë³´ ì¡°íšŒ
+ 2) ê³¼ì¼ë³„ ë§¤ì¶œ ì •ë³´ ì¡°íšŒ
+ 3) ì¡°í•©ë³„(nê°€ì§€) ë§¤ì¶œ ì •ë³´ ì¡°íšŒ
+ 4) ë’¤ë¡œê°€ê¸°
 
-¨ç ¸ÅÃâÁ¤º¸ Á¶È¸
- 1) ÃÑ ¸ÅÃâ Á¤º¸ Á¶È¸
- 2) °úÀÏº° ¸ÅÃâ Á¤º¸ Á¶È¸
- 3) Á¶ÇÕº°(n°¡Áö) ¸ÅÃâ Á¤º¸ Á¶È¸
- 4) µÚ·Î°¡±â
+â‘¡ ê³¼ì¼ ë° ë¶€ìì¬ ê´€ë¦¬
+ 1) ê³¼ì¼ ê´€ë¦¬
+  1-1) ê³¼ì¼ ì‹ ê·œ ë“±ë¡
+  1-2) ê³¼ì¼ ì •ë³´ ë³€ê²½
+  1-3) ê³¼ì¼ ì •ë³´ ì‚­ì œ
+  1-4) ë’¤ë¡œê°€ê¸°
+ 2) ë¶€ìì¬ ê´€ë¦¬
+  2-1) ì„¤íƒ• ì¬ê³  ê´€ë¦¬
+  2-2) ê¼¬ì¹˜ ì¬ê³  ê´€ë¦¬
+  2-3) ë’¤ë¡œê°€ê¸°
+ 3) ë’¤ë¡œê°€ê¸°
 
-¨è °úÀÏ ¹× ºÎÀÚÀç °ü¸®
- 1) °úÀÏ °ü¸®
-  1-1) °úÀÏ ½Å±Ô µî·Ï
-  1-2) °úÀÏ Á¤º¸ º¯°æ
-  1-3) °úÀÏ Á¤º¸ »èÁ¦
-  1-4) µÚ·Î°¡±â
- 2) ºÎÀÚÀç °ü¸®
-  2-1) ¼³ÅÁ Àç°í °ü¸®
-  2-2) ²¿Ä¡ Àç°í °ü¸®
-  2-3) µÚ·Î°¡±â
- 3) µÚ·Î°¡±â
+â‘¢ ê³ ê°ìš©(íŒë§¤ìš©) ì‹œìŠ¤í…œ ì „í™˜
 
-¨é °í°´¿ë(ÆÇ¸Å¿ë) ½Ã½ºÅÛ ÀüÈ¯
+â‘£ í”„ë¡œê·¸ë¨ ì¢…ë£Œ
 
-¨ê ÇÁ·Î±×·¥ Á¾·á
+*ë©”ì†Œë“œ êµ¬ì„±*
 
-*¸Ş¼Òµå ±¸¼º*
+#1 â‘ ~â‘£ ê¸°ëŠ¥ì„ ì„ íƒí•˜ëŠ” ë©”ì†Œë“œ
 
-#1 ¨ç~¨ê ±â´ÉÀ» ¼±ÅÃÇÏ´Â ¸Ş¼Òµå
-
-#2 ¼±ÅÃÇÑ ±â´ÉÀ¸·Î ÀÌµ¿½ÃÄÑÁÖ´Â ¸Ş¼Òµå
+#2 ì„ íƒí•œ ê¸°ëŠ¥ìœ¼ë¡œ ì´ë™ì‹œì¼œì£¼ëŠ” ë©”ì†Œë“œ
 */
 
 import java.util.Scanner;
@@ -38,10 +37,10 @@ import java.io.IOException;
 
 class AdMain implements VmMenu
 {	
-	private static final int AD_SALES = 1;		// ¸ÅÃâÁ¤º¸ Á¶È¸
-	private static final int AD_SETTING = 2;		// °úÀÏ ¹× ºÎÀÚÀç °ü¸®
-	private static final int AD_TOCUSTOM = 3;	// °í°´¿ë(ÆÇ¸Å¿ë) ½Ã½ºÅÛ ÀüÈ¯
-	private static final int AD_EXIT = 4;		// ÇÁ·Î±×·¥ Á¾·á(°ü¸®ÀÚ¸¸ Á¢±Ù)
+	private static final int AD_SALES = 1;		// ë§¤ì¶œì •ë³´ ì¡°íšŒ
+	private static final int AD_SETTING = 2;		// ê³¼ì¼ ë° ë¶€ìì¬ ê´€ë¦¬
+	private static final int AD_TOCUSTOM = 3;	// ê³ ê°ìš©(íŒë§¤ìš©) ì‹œìŠ¤í…œ ì „í™˜
+	private static final int AD_EXIT = 4;		// í”„ë¡œê·¸ë¨ ì¢…ë£Œ(ê´€ë¦¬ìë§Œ ì ‘ê·¼)
 
 	private static int adMenuSel = 0;
 	
@@ -56,11 +55,11 @@ class AdMain implements VmMenu
 	@Override
 	public void menuDisp()
 	{
-		System.out.println("\n\t[°ü¸®ÀÚ ½Ã½ºÅÛ]");
-		System.out.println("[1] ¸ÅÃâ ¹× ÆÇ¸ÅÅë°è");
-		System.out.println("[2] °úÀÏ ¹× ºÎÀÚÀç °ü¸®");
-		System.out.println("[3] ÆÇ¸Å¿ë ½Ã½ºÅÛ ÀüÈ¯");
-		System.out.println("[4] ÇÁ·Î±×·¥ Á¾·á\n");
+		System.out.println("\n\t[ê´€ë¦¬ì ì‹œìŠ¤í…œ]");
+		System.out.println("[1] ë§¤ì¶œ ë° íŒë§¤í†µê³„");
+		System.out.println("[2] ê³¼ì¼ ë° ë¶€ìì¬ ê´€ë¦¬");
+		System.out.println("[3] íŒë§¤ìš© ì‹œìŠ¤í…œ ì „í™˜");
+		System.out.println("[4] í”„ë¡œê·¸ë¨ ì¢…ë£Œ\n");
 	}
 	
 	@Override
@@ -74,8 +73,8 @@ class AdMain implements VmMenu
 
 		do
 		{
-			System.out.println("¸Ş´º¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä");
-			System.out.print("¢º ");
+			System.out.println("ë©”ë‰´ë¥¼ ì„ íƒí•´ ì£¼ì„¸ìš”");
+			System.out.print("â–¶ ");
 			inputTemp = sc.next();
 			System.out.println();
 
@@ -107,7 +106,7 @@ class AdMain implements VmMenu
 
 			else
 			{
-				System.out.println("¿Ã¹Ù¸¥ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+				System.out.println("ì˜¬ë°”ë¥¸ ê°’ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 				System.out.println();
 				mJudge = true;
 			}
@@ -120,22 +119,22 @@ class AdMain implements VmMenu
 	{
 		if (adMenuSel == AD_SALES)
 		{
-			// ¸ÅÃâÁ¤º¸ Á¶È¸
+			// ë§¤ì¶œì •ë³´ ì¡°íšŒ
 			new AdSales().saleSelect();
 		}
 
 		else if (adMenuSel == AD_SETTING)
 		{
-			// °úÀÏ ¹× ºÎÀÚÀç °ü¸®
+			// ê³¼ì¼ ë° ë¶€ìì¬ ê´€ë¦¬
 			new AdSetting().setSelect();
 		}
 
 		else if (adMenuSel == AD_TOCUSTOM)
 		{
-			// °í°´¿ë(ÆÇ¸Å¿ë) ½Ã½ºÅÛ ÀüÈ¯
+			// ê³ ê°ìš©(íŒë§¤ìš©) ì‹œìŠ¤í…œ ì „í™˜
 			Serial.fruitSet(); 
 			Serial.subSet(); 
-			//Á¤ÇÑ¿ï ½ÃÀÛ - ¿À·ù³ª¸é Áö¿ì±â
+			//ì •í•œìš¸ ì‹œì‘ - ì˜¤ë¥˜ë‚˜ë©´ ì§€ìš°ê¸°
 
 			Serial.totahapSet();
 			Serial.dailySalesSet();
@@ -148,7 +147,7 @@ class AdMain implements VmMenu
 
 		else if (adMenuSel == AD_EXIT)
 		{	
-			// ÇÁ·Î±×·¥ Á¾·á(°ü¸®ÀÚ¸¸ Á¢±Ù)
+			// í”„ë¡œê·¸ë¨ ì¢…ë£Œ(ê´€ë¦¬ìë§Œ ì ‘ê·¼)
 			Exit.exit();	
 		}
 	}
@@ -158,11 +157,11 @@ class AdMain implements VmMenu
 				Scanner sc = new Scanner(System.in);
 				String inputTemp1;
 				
-				System.out.println("\t[ÆÇ¸Å¸ğµå]");
+				System.out.println("\t[íŒë§¤ëª¨ë“œ]");
 				System.out.println();
 
-				System.out.println("ÆÇ¸Å ÁØºñ°¡ ¿Ï·á µÇ¾ú½À´Ï±î? (Y/N)");
-				System.out.print("¢º ");
+				System.out.println("íŒë§¤ ì¤€ë¹„ê°€ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆê¹Œ? (Y/N)");
+				System.out.print("â–¶ ");
 				inputTemp1 = sc.next();
 
 				if (inputTemp1.equals("Y") || inputTemp1.equals("y"))
