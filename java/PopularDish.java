@@ -9,12 +9,11 @@ import java.util.Set;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 public class PopularDish 
 {
-    private HashMap<ArrayList<String>, Integer> combinationCount = new HashMap<>();	// Å°: [°úÀÏÁ¶ÇÕ], °ª: [ÆÇ¸Å Ä«¿îÆ®]
-    private List<Map.Entry<ArrayList<String>, Integer>> sortedCombinationCount;		// À§ÀÇ ÀÚ·á±¸Á¶¸¦ ÆÇ¸Å Ä«¿îÆ®¸¦ ±âÁØÀ¸·Î ³»¸²Â÷¼ø Á¤·Ä
-    private ArrayList<String> fruitNames = new ArrayList<>();						// fruitÀÇ ÀÌ¸§À» ´ãÀ» ÀÚ·á±¸Á¶
+    private HashMap<ArrayList<String>, Integer> combinationCount = new HashMap<>();	// í‚¤: [ê³¼ì¼ì¡°í•©], ê°’: [íŒë§¤ ì¹´ìš´íŠ¸]
+    private List<Map.Entry<ArrayList<String>, Integer>> sortedCombinationCount;		// ìœ„ì˜ ìë£Œêµ¬ì¡°ë¥¼ íŒë§¤ ì¹´ìš´íŠ¸ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
+    private ArrayList<String> fruitNames = new ArrayList<>();						// fruitì˜ ì´ë¦„ì„ ë‹´ì„ ìë£Œêµ¬ì¡°
 
 	ArrayList<ArrayList<String>> allHuruLists = new ArrayList<>();
 
@@ -32,19 +31,19 @@ public class PopularDish
 		try
 		{
 			do
-			{	System.out.println("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯");
-				System.out.println("¦­         ¡ÚÀÎ±â TOP3¡Ú            ¦­");
-				System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´"); 
-				System.out.println("¦­ ¨ç ¡ÚÀÎ±â TOP3¡Ú Á¶È¸            ¦­");
-				System.out.println("¦­                                  ¦­");
-				System.out.println("¦­ ¨è ÁÖ¹® ÇÏ±â                     ¦­");
-				System.out.println("¦­                                  ¦­"); 
-				System.out.println("¦­ ¨é µÚ·Î °¡±â                     ¦­");
-				System.out.println("¦­                                  ¦­");
-				System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´"); 
-				System.out.print("  ¢º "); 
+			{	System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“");
+				System.out.println("â”ƒ         â˜…ì¸ê¸° TOP3â˜…            â”ƒ");
+				System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"); 
+				System.out.println("â”ƒ â‘  â˜…ì¸ê¸° TOP3â˜… ì¡°íšŒ            â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ");
+				System.out.println("â”ƒ â‘¡ ì£¼ë¬¸ í•˜ê¸°                     â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ"); 
+				System.out.println("â”ƒ â‘¢ ë’¤ë¡œ ê°€ê¸°                     â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ");
+				System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"); 
+				System.out.print("  â–¶ "); 
 				pSel = sc.nextInt();
-				System.out.println("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°"); 
+				System.out.println("â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›"); 
 				System.out.println();
 			}
 			while(pSel < 1 || pSel > 3);	
@@ -52,26 +51,26 @@ public class PopularDish
 		
 		catch (InputMismatchException e)
 		{
-			System.out.println("¿Ã¹Ù¸¥ ¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			System.out.println("ì˜¬ë°”ë¥¸ ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 			pMenuSelect();
 		}
 
 		if (pSel == P_DISH)
 		{
-			// ÀÎ±â Top3 Á¶È¸
+			// ì¸ê¸° Top3 ì¡°íšŒ
 			print();
 		}
 
 		else if (pSel == P_ORDER)
 		{
-			// ÁÖ¹® ÇÏ±â
+			// ì£¼ë¬¸ í•˜ê¸°
 			OrderSel os9 = new OrderSel();
 			os9.orderSelect();
 		}
 
 		else if (pSel == P_BACK)
 		{
-			//µÚ·Î°¡±â
+			//ë’¤ë¡œê°€ê¸°
 			
 			vm5.turnOn();
 		}
@@ -88,13 +87,13 @@ public class PopularDish
 
         for (FruitsProducts fruit : Fruits.fruits.values()) 
 		{	
-			// °úÀÏ ÀÌ¸§ ´ã±â
+			// ê³¼ì¼ ì´ë¦„ ë‹´ê¸°
             fruitNames.add(fruit.getName());
         }
 
         for (ArrayList<String> combination : allHuruLists) 
 		{	
-			// À¯È¿ÇÑ(fruits ±¸Á¶¿¡ ÀÖ´Â °úÀÏµé¸¸) Á¶ÇÕ¸¸ °Å¸£±â
+			// ìœ íš¨í•œ(fruits êµ¬ì¡°ì— ìˆëŠ” ê³¼ì¼ë“¤ë§Œ) ì¡°í•©ë§Œ ê±°ë¥´ê¸°
 
             boolean validCombination = true;
 
@@ -109,14 +108,14 @@ public class PopularDish
                 continue;
             }
 			
-			// Á¤·ÄÇÏ±â
+			// ì •ë ¬í•˜ê¸°
             Collections.sort(combination);
 
-			// Ä«¿îÆ®¼¼±â
+			// ì¹´ìš´íŠ¸ì„¸ê¸°
 			 combinationCount.put(combination, combinationCount.getOrDefault(combination, 0) + 1);
         }
 		
-		// Ä«¿îÆ®¸¦ ±âÁØÀ¸·Î ³»¸²Â÷¼ø Á¤·Ä
+		// ì¹´ìš´íŠ¸ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
         sortedCombinationCount = new ArrayList<>(combinationCount.entrySet());
         sortedCombinationCount.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
 		
@@ -134,25 +133,25 @@ public class PopularDish
 
 		int count = 0;
 
-		System.out.println("  ¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
+		System.out.println("  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
         for (Map.Entry<ArrayList<String>, Integer> entry : sortedCombinationCount)
 		{
             count++;
-            System.out.printf("  %dÀ§ Á¶ÇÕ: %s ÆÇ¸Å °¹¼ö : %d\n", count, entry.getKey(), entry.getValue());
+            System.out.printf("  %dìœ„ ì¡°í•©: %s íŒë§¤ ê°¯ìˆ˜ : %d\n", count, entry.getKey(), entry.getValue());
             if (count >= 3) 
 			{
                 break;
             }
         }
-		System.out.println("  ¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
+		System.out.println("  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
 		
 		do
 		{
 			System.out.println();
-			System.out.println("  ÁÖ¹®ÇÏ½Ã·Á¸é ÇØ´çÇÏ´Â ¼øÀ§ÀÇ ¼ıÀÚ¸¦ ´©¸£¼¼¿ä (4¹øÀº µÚ·Î°¡±â)");
-			System.out.print("  ¢º ");
+			System.out.println("  ì£¼ë¬¸í•˜ì‹œë ¤ë©´ í•´ë‹¹í•˜ëŠ” ìˆœìœ„ì˜ ìˆ«ìë¥¼ ëˆ„ë¥´ì„¸ìš” (4ë²ˆì€ ë’¤ë¡œê°€ê¸°)");
+			System.out.print("  â–¶ ");
 			temp = sc.nextInt();
-			System.out.println("  ¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
+			System.out.println("  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
 		}
 		while (temp > 4 || temp < 1);
 
@@ -189,7 +188,7 @@ public class PopularDish
 		{
 			FruitsProducts fruitProduct = null;
 
-			// °úÀÏ ÀÌ¸§À¸·Î °úÀÏ °´Ã¼ Ã£±â
+			// ê³¼ì¼ ì´ë¦„ìœ¼ë¡œ ê³¼ì¼ ê°ì²´ ì°¾ê¸°
 			for (Map.Entry<Integer, FruitsProducts> entry : Fruits.fruits.entrySet()) 
 			{
 				FruitsProducts product = entry.getValue();
@@ -201,7 +200,7 @@ public class PopularDish
 				}
 			}
 
-			// °úÀÏ °´Ã¼°¡ ÀÖÀ» °æ¿ì °¡°İ ´©Àû
+			// ê³¼ì¼ ê°ì²´ê°€ ìˆì„ ê²½ìš° ê°€ê²© ëˆ„ì 
 			if (fruitProduct != null) 
 			{
 				totalPrice += fruitProduct.getPrice();
@@ -232,7 +231,7 @@ public class PopularDish
 		{
 			FruitsProducts fruitProduct = null;
 
-			// °úÀÏ ÀÌ¸§À¸·Î °úÀÏ °´Ã¼ Ã£±â
+			// ê³¼ì¼ ì´ë¦„ìœ¼ë¡œ ê³¼ì¼ ê°ì²´ ì°¾ê¸°
 			for (Map.Entry<Integer, FruitsProducts> entry : Fruits.fruits.entrySet()) 
 			{
 				FruitsProducts product = entry.getValue();
@@ -244,7 +243,7 @@ public class PopularDish
 				}
 			}
 
-			// °úÀÏ °´Ã¼°¡ ÀÖÀ» °æ¿ì °¡°İ ´©Àû
+			// ê³¼ì¼ ê°ì²´ê°€ ìˆì„ ê²½ìš° ê°€ê²© ëˆ„ì 
 			if (fruitProduct != null) 
 			{
 				totalPrice += fruitProduct.getPrice();
@@ -275,7 +274,7 @@ public class PopularDish
 		{
 			FruitsProducts fruitProduct = null;
 
-			// °úÀÏ ÀÌ¸§À¸·Î °úÀÏ °´Ã¼ Ã£±â
+			// ê³¼ì¼ ì´ë¦„ìœ¼ë¡œ ê³¼ì¼ ê°ì²´ ì°¾ê¸°
 			for (Map.Entry<Integer, FruitsProducts> entry : Fruits.fruits.entrySet()) 
 			{
 				FruitsProducts product = entry.getValue();
@@ -287,7 +286,7 @@ public class PopularDish
 				}
 			}
 
-			// °úÀÏ °´Ã¼°¡ ÀÖÀ» °æ¿ì °¡°İ ´©Àû
+			// ê³¼ì¼ ê°ì²´ê°€ ìˆì„ ê²½ìš° ê°€ê²© ëˆ„ì 
 			if (fruitProduct != null) 
 			{
 				totalPrice += fruitProduct.getPrice();
@@ -318,7 +317,7 @@ public class PopularDish
     for (String fruit : combination) {
         FruitsProducts fruitProduct = null;
 
-        // °úÀÏ ÀÌ¸§À¸·Î °úÀÏ °´Ã¼ Ã£±â
+        // ê³¼ì¼ ì´ë¦„ìœ¼ë¡œ ê³¼ì¼ ê°ì²´ ì°¾ê¸°
         for (Map.Entry<Integer, FruitsProducts> entry : Fruits.fruits.entrySet()) {
             FruitsProducts product = entry.getValue();
             if (product.getName().equals(fruit)) {
@@ -332,11 +331,11 @@ public class PopularDish
             if (currentStock > 0) {
                 fruitProduct.setStock(currentStock - 1);
             } else {
-                System.out.println(fruit + "ÀÇ Àç°í°¡ ºÎÁ·ÇÏ¿© ÁÖ¹®ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+                System.out.println(fruit + "ì˜ ì¬ê³ ê°€ ë¶€ì¡±í•˜ì—¬ ì£¼ë¬¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				vm6.turnOn();
             }
         } else {
-            System.out.println("ÇØ´çÇÏ´Â °úÀÏ Á¤º¸¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù: " + fruit);
+            System.out.println("í•´ë‹¹í•˜ëŠ” ê³¼ì¼ ì •ë³´ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤: " + fruit);
 			vm6.turnOn();
         }
     }
