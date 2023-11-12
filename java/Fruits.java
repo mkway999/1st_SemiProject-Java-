@@ -1,5 +1,5 @@
 /*
-[°úÀÏ °´Ã¼]
+[ê³¼ì¼ ê°ì²´ í´ë˜ìŠ¤]
 */
 import java.util.*;
 import java.io.*;
