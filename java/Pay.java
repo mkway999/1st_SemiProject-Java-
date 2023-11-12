@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.text.DecimalFormat; // µ· ³ª¿Ã‹š , ³ª¿À°ÔÇØÁÖ´Â ÇÔ¼ö°¡ Æ÷ÇÔµÇ¾û ÀÖÀ½
+import java.text.DecimalFormat; // ëˆ ë‚˜ì˜¬Â‹Âš , ë‚˜ì˜¤ê²Œí•´ì£¼ëŠ” í•¨ìˆ˜ê°€ í¬í•¨ë˜ì—‰ ìˆìŒ
 import java.lang.Math;
 import java.io.IOException;
 import java.util.HashMap;
@@ -14,26 +14,25 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Comparator;
 import java.util.Collections;
-
 public class Pay extends ShopingCart implements Serializable
 {
 	
 	VendingMachine ve = new VendingMachine(); 
 	ShopingCart  sh = new ShopingCart();
 	
-	static HashMap<LocalDate, ArrayList<ArrayList<String>>> pdHuruList = new HashMap<>(); // °áÁ¦°¡ ¿Ï·áµÈ ÅÁÈÄ·ç - ³¯Â¥º° ÀúÀå
-	static HashMap<Integer, ArrayList<String>> totalPdHuruList = new HashMap<>();	// °áÁ¦°¡ ¿Ï·áµÈ ÅÁÈÄ·ç - ³¯Â¥ »ó°ü¾øÀÌ ÃÑ ÀúÀå
+	static HashMap<LocalDate, ArrayList<ArrayList<String>>> pdHuruList = new HashMap<>(); // ê²°ì œê°€ ì™„ë£Œëœ íƒ•í›„ë£¨ - ë‚ ì§œë³„ ì €ì¥
+	static HashMap<Integer, ArrayList<String>> totalPdHuruList = new HashMap<>();	// ê²°ì œê°€ ì™„ë£Œëœ íƒ•í›„ë£¨ - ë‚ ì§œ ìƒê´€ì—†ì´ ì´ ì €ì¥
 	static private int totalHap;
 
-	static Map<String, Integer> fruitCounts = new HashMap<>();				  // ÆÇ¸ÅµÈ °úÀÏ °¹¼ö(³¯Â¥º°)
+	static Map<String, Integer> fruitCounts = new HashMap<>();				  // íŒë§¤ëœ ê³¼ì¼ ê°¯ìˆ˜(ë‚ ì§œë³„)
 	
-	static Map<String, Integer> fruitCounts1 = new HashMap<>();				  // ÆÇ¸ÅµÈ °úÀÏ °¹¼ö(ÃÑ)
+	static Map<String, Integer> fruitCounts1 = new HashMap<>();				  // íŒë§¤ëœ ê³¼ì¼ ê°¯ìˆ˜(ì´)
 
-	//»õ·Î Ãß°¡ÇÑ°÷
-	static HashMap<Integer, ArrayList<String>> pd_HuruList1 = new HashMap<>(); //Á¶ÇÕº° °³¼ö
-	static HashMap<Integer, ArrayList<String>> pd_HuruList2 = new HashMap<>(); //ÀÎ±â Á¶ÇÕº° °³¼ö
+	//ìƒˆë¡œ ì¶”ê°€í•œê³³
+	static HashMap<Integer, ArrayList<String>> pd_HuruList1 = new HashMap<>(); //ì¡°í•©ë³„ ê°œìˆ˜
+	static HashMap<Integer, ArrayList<String>> pd_HuruList2 = new HashMap<>(); //ì¸ê¸° ì¡°í•©ë³„ ê°œìˆ˜
 
-	static List<String> availableFruits = new ArrayList<String>();  // °úÀÏ ¼±ÅÃÁö¿¡¼­ »ç¿ë °¡´ÉÇÑ °úÀÏ ÀÌ¸§ ¸ñ·Ï
+	static List<String> availableFruits = new ArrayList<String>();  // ê³¼ì¼ ì„ íƒì§€ì—ì„œ ì‚¬ìš© ê°€ëŠ¥í•œ ê³¼ì¼ ì´ë¦„ ëª©ë¡
 
 	static HashSet<String> type = new HashSet();
 	static HashSet<String> type1 = new HashSet();
@@ -43,7 +42,7 @@ public class Pay extends ShopingCart implements Serializable
 	
 	AdSales ad = new AdSales();
 	int choice;
-	static private int totahap; // ÀÌ³ğÀº ÃÑ ¸ÅÃâÁ¶È¸ÇÒ‹š ¾¸
+	static private int totahap; // ì´ë†ˆì€ ì´ ë§¤ì¶œì¡°íšŒí• Â‹Âš ì”€
 	int totlamoney;
 
 	Coating co = new Coating();
@@ -68,7 +67,7 @@ public class Pay extends ShopingCart implements Serializable
 		this.totahap = totahap;
 	}
 
-	// ´Ş·Â...
+	// ë‹¬ë ¥...
 	Calendar ca = new GregorianCalendar();
 			int year  = ca.get(Calendar.YEAR);
 			int month = ca.get(Calendar.MONTH);
@@ -81,91 +80,91 @@ public class Pay extends ShopingCart implements Serializable
 
         while (true) {
             try {
-                System.out.println("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯");
-				System.out.println("¦­         °áÁ¦ ¸Ş´º                ¦­");
-				System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´"); 
-				System.out.println("¦­ ¨ç °áÁ¦ÇÏ±â                      ¦­");
-				System.out.println("¦­                                  ¦­");
-				System.out.println("¦­ ¨è Àå¹Ù±¸´Ï·Î µ¹¾Æ°¡±â           ¦­");
-				System.out.println("¦­                                  ¦­"); 
-				System.out.println("¦­ ¨é ¸ŞÀÎ ¸Ş´º·Î µ¹¾Æ°¡±â          ¦­");
-				System.out.println("¦­                                  ¦­");
-				System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´"); 
-				System.out.print("  ¢º "); 
+                System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“");
+				System.out.println("â”ƒ         ê²°ì œ ë©”ë‰´                â”ƒ");
+				System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"); 
+				System.out.println("â”ƒ â‘  ê²°ì œí•˜ê¸°                      â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ");
+				System.out.println("â”ƒ â‘¡ ì¥ë°”êµ¬ë‹ˆë¡œ ëŒì•„ê°€ê¸°           â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ"); 
+				System.out.println("â”ƒ â‘¢ ë©”ì¸ ë©”ë‰´ë¡œ ëŒì•„ê°€ê¸°          â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ");
+				System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"); 
+				System.out.print("  â–¶ "); 
 				choice = sc.nextInt();
-				System.out.println("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°"); 
+				System.out.println("â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›"); 
 				} 
 			catch (Exception e)
 				{
 					e.toString();
-					System.out.println("ºñ»ó~~~ ¿À·ù ¹ß»ı! ");
-					System.out.println("ÇØ°áÇÒ ¹æ¹ıÀº ¿ÀÁ÷ÇÏ³ª  ");
-					System.out.println("´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä ^_^");
-					sc.nextLine(); // ¹öÆÛ ºñ¿ì±â
-					continue; // Àß¸øµÈ ÀÔ·Â Ã³¸® ÈÄ ´Ù½Ã ¹İº¹¹® ½ÃÀÛ
+					System.out.println("ë¹„ìƒ~~~ ì˜¤ë¥˜ ë°œìƒ! ");
+					System.out.println("í•´ê²°í•  ë°©ë²•ì€ ì˜¤ì§í•˜ë‚˜  ");
+					System.out.println("ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš” ^_^");
+					sc.nextLine(); // ë²„í¼ ë¹„ìš°ê¸°
+					continue; // ì˜ëª»ëœ ì…ë ¥ ì²˜ë¦¬ í›„ ë‹¤ì‹œ ë°˜ë³µë¬¸ ì‹œì‘
 				}
 
             if (choice == 1)
 			{
-                // °áÁ¦ÇÏ±â
+                // ê²°ì œí•˜ê¸°
 				//System.out.println(rc.sum);
 				//System.out.println(shh.huru);
 				//System.out.println(shh.huruprice);
-               System.out.println("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯"); 
-				System.out.println("¦­ ¨ç Ä«µå °áÁ¦                     ¦­");
-				System.out.println("¦­                                  ¦­");
-				System.out.println("¦­ ¨è Çö±İ °áÁ¦                     ¦­");
-				System.out.println("¦­                                  ¦­"); 
-				System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´"); 
-				System.out.print("  ¢º ");
+               System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“"); 
+				System.out.println("â”ƒ â‘  ì¹´ë“œ ê²°ì œ                     â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ");
+				System.out.println("â”ƒ â‘¡ í˜„ê¸ˆ ê²°ì œ                     â”ƒ");
+				System.out.println("â”ƒ                                  â”ƒ"); 
+				System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"); 
+				System.out.print("  â–¶ ");
                 choice = sc.nextInt();
-				System.out.println("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°"); 
+				System.out.println("â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›"); 
                 if (choice == 1)
 				{
-                    // Ä«µå °áÁ¦ ÇÏ±â
+                    // ì¹´ë“œ ê²°ì œ í•˜ê¸°
                     cardPay();
                 } 
 				else if (choice == 2) 
 				{
-                    // Çö±İ °áÁ¦ ÇÏ±â
+                    // í˜„ê¸ˆ ê²°ì œ í•˜ê¸°
                     cashPay();
                 }
 				else
 				{
-                    System.out.println("´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");
+                    System.out.println("ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”");
 				}
             }
 			else if (choice == 2)
 			{
-                // Àå¹Ù±¸´Ï µ¹¾Æ°¡±â
+                // ì¥ë°”êµ¬ë‹ˆ ëŒì•„ê°€ê¸°
 				sMenu();
             }
 			else if (choice == 3)
 			{
-                // Àå¹Ù±¸´Ï ÃÊ±âÈ­?
-				// È¸ÀÇ ÇÊ¿ä
+                // ì¥ë°”êµ¬ë‹ˆ ì´ˆê¸°í™”?
+				// íšŒì˜ í•„ìš”
                 
 				
-				// ¸ŞÀÎ¸Ş´º·Î µ¹¾Æ°¡±â
+				// ë©”ì¸ë©”ë‰´ë¡œ ëŒì•„ê°€ê¸°
                 ve.turnOn();
-                break; // ¹İº¹¹® Á¾·á
+                break; // ë°˜ë³µë¬¸ ì¢…ë£Œ
             } 
 			else
 			{
-                System.out.println("´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");
+                System.out.println("ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”");
             }
         }
     }
 
 
-	public void cashPay() throws IOException// Çö±İ °áÁ¦ ÇÔ¼ö
+	public void cashPay() throws IOException// í˜„ê¸ˆ ê²°ì œ í•¨ìˆ˜
 	{
 		
-	 // »ç¿ëÀÚ·ÎºÎÅÍ °áÁ¦ ±İ¾× ÀÔ·Â
+	 // ì‚¬ìš©ìë¡œë¶€í„° ê²°ì œ ê¸ˆì•¡ ì…ë ¥
        Scanner sc = new Scanner(System.in);
-	   DecimalFormat df = new DecimalFormat("###,###"); // µ· Ãâ·ÂÇÒ¶§ , ³ª¿À°Ô ÇÏ´Â °Å
+	   DecimalFormat df = new DecimalFormat("###,###"); // ëˆ ì¶œë ¥í• ë•Œ , ë‚˜ì˜¤ê²Œ í•˜ëŠ” ê±°
 	   
-       int usermoney;  // »ç¿ëÀÚ°¡ ÀÔ·ÂÇÒ Çö±İ
+       int usermoney;  // ì‚¬ìš©ìê°€ ì…ë ¥í•  í˜„ê¸ˆ
 	   
 				for (int i = 0; i < ShopingCart.priceList.size(); i++)
 				{
@@ -173,28 +172,28 @@ public class Pay extends ShopingCart implements Serializable
 					totlamoney+=price;
 	
 					//increaseAddCount(fruitName);
-					//Å×½ºÆ® System.out.println(fruitName + " - °¡°İ: " + price + "¿ø");
+					//í…ŒìŠ¤íŠ¸ System.out.println(fruitName + " - ê°€ê²©: " + price + "ì›");
 				}
 
        do
 		{	
 		   String changemoney2 = df.format(totlamoney);
-		   	System.out.println("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯"); 
-		    System.out.print  ("¦­ ÃÑ¾×Àº "+changemoney2+"ÀÔ´Ï´Ù.");System.out.println("              ¦­");
-			System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´");
-			System.out.print  ("  ¢º Çö±İÀ» ³Ö¾î ÁÖ¼¼¿ä: ");
+		   	System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“"); 
+		    System.out.print  ("â”ƒ ì´ì•¡ì€ "+changemoney2+"ì…ë‹ˆë‹¤.");System.out.println("              â”ƒ");
+			System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«");
+			System.out.print  ("  â–¶ í˜„ê¸ˆì„ ë„£ì–´ ì£¼ì„¸ìš”: ");
 
 
-		//ÀÏ´Ü Å×½ºÆ® ¿ëµµ 
-		// ÆÇ¸ÅµÈ °úÀÏ Á¤º¸ Ãâ·Â
+		//ì¼ë‹¨ í…ŒìŠ¤íŠ¸ ìš©ë„ 
+		// íŒë§¤ëœ ê³¼ì¼ ì •ë³´ ì¶œë ¥
 		/*
-		System.out.println("ÆÇ¸ÅµÈ °úÀÏ Á¤º¸:");
+		System.out.println("íŒë§¤ëœ ê³¼ì¼ ì •ë³´:");
 		for (FruitsProducts fruit : fru.fruits.values())
 		{
 			int addCount = fruit.getAddCount();
 			if (addCount > 0)
 			{
-				System.out.println(fruit.getName() + " - ÆÇ¸ÅµÈ °³¼ö: " + addCount);
+				System.out.println(fruit.getName() + " - íŒë§¤ëœ ê°œìˆ˜: " + addCount);
 			}
 		}
 		*/
@@ -205,59 +204,59 @@ public class Pay extends ShopingCart implements Serializable
 					int aa=usermoney - totlamoney;
 					int change=Math.abs(aa);
 					String changemoney1 = df.format(change);
-					System.out.println("ÀÔ·ÂÇÑ ±İ¾×ÀÌ °áÁ¦ ±İ¾×º¸´Ù ºÎÁ·ÇÕ´Ï´Ù.");
-					System.out.println("ºÎÁ·ÇÑ ±İ¾×: " + changemoney1 + "¿ø");
-					System.out.println("´Ù½Ã ÀÌ¿ëÇÏ·Á¸é ±İ¾×À» ´õ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+					System.out.println("ì…ë ¥í•œ ê¸ˆì•¡ì´ ê²°ì œ ê¸ˆì•¡ë³´ë‹¤ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+					System.out.println("ë¶€ì¡±í•œ ê¸ˆì•¡: " + changemoney1 + "ì›");
+					System.out.println("ë‹¤ì‹œ ì´ìš©í•˜ë ¤ë©´ ê¸ˆì•¡ì„ ë” ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 					
 				}
 		} while (usermoney < totlamoney);
 
 
 		String changemoney = df.format(usermoney - totlamoney);
-        System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´");
-        System.out.println("¦­ Çö±İ°áÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.       ¦­");
-        System.out.println("¦­ °Å½º¸§µ·: "+changemoney + "¿ø");
-		System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´");
-        System.out.println("¦­ ¿µ¼öÁõÀ» Ãâ·ÂÇÏ½Ã°Ú½À´Ï±î?       ¦­");
-		System.out.println("¦­                                  ¦­");
-		System.out.println("¦­ ¨ç ¿¹                            ¦­");
-		System.out.println("¦­                                  ¦­");
-		System.out.println("¦­ ¨è ¾Æ´Ï¿À                        ¦­");
-		System.out.println("¦­                                  ¦­");
-		System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´");
-		System.out.print("  ¢º ");
+        System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«");
+        System.out.println("â”ƒ í˜„ê¸ˆê²°ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.       â”ƒ");
+        System.out.println("â”ƒ ê±°ìŠ¤ë¦„ëˆ: "+changemoney + "ì›");
+		System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«");
+        System.out.println("â”ƒ ì˜ìˆ˜ì¦ì„ ì¶œë ¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?       â”ƒ");
+		System.out.println("â”ƒ                                  â”ƒ");
+		System.out.println("â”ƒ â‘  ì˜ˆ                            â”ƒ");
+		System.out.println("â”ƒ                                  â”ƒ");
+		System.out.println("â”ƒ â‘¡ ì•„ë‹ˆì˜¤                        â”ƒ");
+		System.out.println("â”ƒ                                  â”ƒ");
+		System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«");
+		System.out.print("  â–¶ ");
 		choice = sc.nextInt();
-		System.out.println("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°");
+		System.out.println("â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›");
 		System.out.println();
 		if (choice == 1)
 		{
-			// ¿µ¼öÁõ Ãâ·Â
-			System.out.println("  ¡á¡á¡á ÁÖ  ¹®  ¼­ ¡á¡á¡á");
-			System.out.println("¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬"); 
-			System.out.println("  ¢º ÁÖ ¹® ÀÏ ÀÚ: " + year + "³â" + (month+1) + "¿ù" + day + "ÀÏ");
-			System.out.println("¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬"); 
-			System.out.println("  ¢º ÁÖ ¹® ³» ¿ª ¢¸");
-			System.out.println("¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬"); 
+			// ì˜ìˆ˜ì¦ ì¶œë ¥
+			System.out.println("  â– â– â–  ì£¼  ë¬¸  ì„œ â– â– â– ");
+			System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”"); 
+			System.out.println("  â–¶ ì£¼ ë¬¸ ì¼ ì: " + year + "ë…„" + (month+1) + "ì›”" + day + "ì¼");
+			System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”"); 
+			System.out.println("  â–¶ ì£¼ ë¬¸ ë‚´ ì—­ â—€");
+			System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”"); 
 
 			
 			for (int i = 0; i < ShopingCart.priceList.size(); i++)
 			{	
 				
 				int price = ShopingCart.priceList.get(i);
-				System.out.printf("  ¡Ü¡Ü¡Ü %d¹ø ÅÁÈÄ·ç ¡Ü¡Ü¡Ü\n", (i+1));
-				System.out.printf("  ÅÁÈÄ·ç ±¸¼º  : %s \n", ShopingCart.huruList.get(i+1));
-				System.out.printf("  ¼³ÅÁ µÎ²²    : %s \n", co.sugarCoatinList.get(i));
-				System.out.printf("  °¡°İ         : %d ¿ø\n", price);
-				System.out.println("¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
+				System.out.printf("  â—â—â— %dë²ˆ íƒ•í›„ë£¨ â—â—â—\n", (i+1));
+				System.out.printf("  íƒ•í›„ë£¨ êµ¬ì„±  : %s \n", ShopingCart.huruList.get(i+1));
+				System.out.printf("  ì„¤íƒ• ë‘ê»˜    : %s \n", co.sugarCoatinList.get(i));
+				System.out.printf("  ê°€ê²©         : %d ì›\n", price);
+				System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
 			}
 
 		
 			String hapmoney = df.format(totlamoney);
-			System.out.println   ("  ÆÇ ¸Å ÃÑ ¾×  : "+ hapmoney+ "¿ø");
-			System.out.println   ("  Çö±İ ÁöºÒ¾×  : " + usermoney+ "¿ø");
+			System.out.println   ("  íŒ ë§¤ ì´ ì•¡  : "+ hapmoney+ "ì›");
+			System.out.println   ("  í˜„ê¸ˆ ì§€ë¶ˆì•¡  : " + usermoney+ "ì›");
 
 
-			// ÆÇ¸Å ÃÑ¾×À» ÀüÃ¼ ¸ÅÃâ¿¡ ³Ö±â
+			// íŒë§¤ ì´ì•¡ì„ ì „ì²´ ë§¤ì¶œì— ë„£ê¸°
 			//totahap+=rc.sum;
 			totalHap+=totlamoney;
 			totahap = totalHap;
@@ -266,18 +265,18 @@ public class Pay extends ShopingCart implements Serializable
 			ad.addSale(LocalDate.of(year, (month+1), day), totalHap);
 
 
-			// ±×¸®°í ´Ù½Ã ÆÇÆĞ ÃÑ¾× 0À¸·Î ÃÊ±âÈ­
+			// ê·¸ë¦¬ê³  ë‹¤ì‹œ íŒíŒ¨ ì´ì•¡ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 			totlamoney=0;
 			
-			// °áÁ¦µÈ °úÀÏÀ» pd_HuruList¿¡ ³Ö±â
+			// ê²°ì œëœ ê³¼ì¼ì„ pd_HuruListì— ë„£ê¸°
 			totalPdHuruList.putAll(huruList);
 			pd_HuruList1.putAll(huruList);
 			input();
 
-			// °í°´¿ë(ÆÇ¸Å¿ë) ½Ã½ºÅÛ ÀüÈ¯
+			// ê³ ê°ìš©(íŒë§¤ìš©) ì‹œìŠ¤í…œ ì „í™˜
 			Serial.fruitSet(); 
 			Serial.subSet(); 
-			//Á¤ÇÑ¿ï ½ÃÀÛ - ¿À·ù³ª¸é Áö¿ì±â
+			//ì •í•œìš¸ ì‹œì‘ - ì˜¤ë¥˜ë‚˜ë©´ ì§€ìš°ê¸°
 
 			Serial.totahapSet();
 			Serial.dailySalesSet();
@@ -285,7 +284,7 @@ public class Pay extends ShopingCart implements Serializable
 			Serial.pdHuruListSet();
 			Serial.fruitCountsSet();
 
-			// Àå¹Ù±¸´Ï ÃÊ±âÈ­
+			// ì¥ë°”êµ¬ë‹ˆ ì´ˆê¸°í™”
 			for (int m = 1; m <= fru.fruits.size() ; m++)
 			{		
 				fru.fruits.get(m).setSTemp(0);
@@ -302,28 +301,28 @@ public class Pay extends ShopingCart implements Serializable
 			co.sugarCoatinList.clear();
 			setKeyCounter(1);
 			
-			// ¸ŞÀÎ¸Ş´º·Î µ¹¾Æ°¡±â
+			// ë©”ì¸ë©”ë‰´ë¡œ ëŒì•„ê°€ê¸°
 			ve.turnOn();
 			
 		}
 		else if (choice ==2)
 		{
-			System.out.println("±¸¸ÅÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù ¶Ç ÀÌ¿ëÇØÁÖ¼¼¿ä");
+			System.out.println("êµ¬ë§¤í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤ ë˜ ì´ìš©í•´ì£¼ì„¸ìš”");
 			
 			totalHap+=totlamoney;
 			totahap = totalHap;
 			ad.addSale(LocalDate.of(year, (month+1), day), totalHap);
 			
 			
-			// °áÁ¦µÈ °úÀÏÀ» pd_HuruList¿¡ ³Ö±â
+			// ê²°ì œëœ ê³¼ì¼ì„ pd_HuruListì— ë„£ê¸°
 			totalPdHuruList.putAll(huruList);
 			pd_HuruList1.putAll(huruList);
 			input();
 			
-			// °í°´¿ë(ÆÇ¸Å¿ë) ½Ã½ºÅÛ ÀüÈ¯
+			// ê³ ê°ìš©(íŒë§¤ìš©) ì‹œìŠ¤í…œ ì „í™˜
 			Serial.fruitSet(); 
 			Serial.subSet(); 
-			//Á¤ÇÑ¿ï ½ÃÀÛ - ¿À·ù³ª¸é Áö¿ì±â
+			//ì •í•œìš¸ ì‹œì‘ - ì˜¤ë¥˜ë‚˜ë©´ ì§€ìš°ê¸°
 
 			Serial.totahapSet();
 			Serial.dailySalesSet();
@@ -331,7 +330,7 @@ public class Pay extends ShopingCart implements Serializable
 			Serial.pdHuruListSet();
 			Serial.fruitCountsSet();
 
-			// Àå¹Ù±¸´Ï ÃÊ±âÈ­
+			// ì¥ë°”êµ¬ë‹ˆ ì´ˆê¸°í™”
 			for (int m = 1; m <= fru.fruits.size() ; m++)
 			{		
 				fru.fruits.get(m).setSTemp(0);
@@ -346,45 +345,45 @@ public class Pay extends ShopingCart implements Serializable
 			co.sugarCoatinList.clear();
 			setKeyCounter(1);
 			
-			// ¸ŞÀÎ¸Ş´º·Î µ¹¾Æ°¡´Â ÇÔ¼ö
+			// ë©”ì¸ë©”ë‰´ë¡œ ëŒì•„ê°€ëŠ” í•¨ìˆ˜
 			ve.turnOn();
 			
 		}
     }
 
 
-public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
+public void cardPay() throws IOException// ì¹´ë“œ ê²°ì œ í•¨ìˆ˜
 	{
 		
 		Scanner sc =new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("###,###");
 
-		System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´");
-        System.out.println("¦­ Ä«µå°áÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.       ¦­");
-		System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´");
-        System.out.println("¦­ ¿µ¼öÁõÀ» Ãâ·ÂÇÏ½Ã°Ú½À´Ï±î?       ¦­");
-		System.out.println("¦­                                  ¦­");
-		System.out.println("¦­ ¨ç ¿¹                            ¦­");
-		System.out.println("¦­                                  ¦­");
-		System.out.println("¦­ ¨è ¾Æ´Ï¿À                        ¦­");
-		System.out.println("¦­                                  ¦­");
-		System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´");
-		System.out.print("  ¢º ");
+		System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«");
+        System.out.println("â”ƒ ì¹´ë“œê²°ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.       â”ƒ");
+		System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«");
+        System.out.println("â”ƒ ì˜ìˆ˜ì¦ì„ ì¶œë ¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?       â”ƒ");
+		System.out.println("â”ƒ                                  â”ƒ");
+		System.out.println("â”ƒ â‘  ì˜ˆ                            â”ƒ");
+		System.out.println("â”ƒ                                  â”ƒ");
+		System.out.println("â”ƒ â‘¡ ì•„ë‹ˆì˜¤                        â”ƒ");
+		System.out.println("â”ƒ                                  â”ƒ");
+		System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«");
+		System.out.print("  â–¶ ");
 		choice = sc.nextInt();
-		System.out.println("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°");
+		System.out.println("â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›");
 		System.out.println();
 
 		//System.in.skip(2);
 		if (choice == 1)
 		{
-			// ¿µ¼öÁõ Ãâ·Â
-		System.out.println("  IC ½Å¿ë ½ÂÀÎ(ÀÚÆÇ±â¿ë)");
-			System.out.println("  ¡á¡á¡á ÁÖ  ¹®  ¼­ ¡á¡á¡á");
-			System.out.println("¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬"); 
-			System.out.println("  ¢º ÁÖ ¹® ÀÏ ÀÚ: " + year + "³â" + (month+1) + "¿ù" + day + "ÀÏ");
-			System.out.println("¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬"); 
-			System.out.println("  ¢º ÁÖ ¹® ³» ¿ª ¢¸");
-			System.out.println("¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬"); 
+			// ì˜ìˆ˜ì¦ ì¶œë ¥
+		System.out.println("  IC ì‹ ìš© ìŠ¹ì¸(ìíŒê¸°ìš©)");
+			System.out.println("  â– â– â–  ì£¼  ë¬¸  ì„œ â– â– â– ");
+			System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”"); 
+			System.out.println("  â–¶ ì£¼ ë¬¸ ì¼ ì: " + year + "ë…„" + (month+1) + "ì›”" + day + "ì¼");
+			System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”"); 
+			System.out.println("  â–¶ ì£¼ ë¬¸ ë‚´ ì—­ â—€");
+			System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”"); 
 		
 		
 			for (int i = 0; i < ShopingCart.priceList.size(); i++)
@@ -393,46 +392,46 @@ public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
 				int price = ShopingCart.priceList.get(i);
 				totlamoney+=ShopingCart.priceList.get(i);
 				
-				System.out.printf("  ¡Ü¡Ü¡Ü %d¹ø ÅÁÈÄ·ç ¡Ü¡Ü¡Ü\n", (i+1));
-				System.out.printf("  ÅÁÈÄ·ç ±¸¼º  : %s \n", ShopingCart.huruList.get(i+1));
-				System.out.printf("  ¼³ÅÁ µÎ²²    : %s \n", co.sugarCoatinList.get(i));
-				System.out.printf("  °¡°İ         : %d ¿ø\n", price);
-				System.out.println("¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
+				System.out.printf("  â—â—â— %dë²ˆ íƒ•í›„ë£¨ â—â—â—\n", (i+1));
+				System.out.printf("  íƒ•í›„ë£¨ êµ¬ì„±  : %s \n", ShopingCart.huruList.get(i+1));
+				System.out.printf("  ì„¤íƒ• ë‘ê»˜    : %s \n", co.sugarCoatinList.get(i));
+				System.out.printf("  ê°€ê²©         : %d ì›\n", price);
+				System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
 			}
 		
 				
 			String hapmoney = df.format(totlamoney);
-			System.out.println   ("  ÆÇ ¸Å ÃÑ ¾×  : " + hapmoney+ "¿ø");
-			System.out.println   ("  Ä«µå ÁöºÒ¾×  : " + hapmoney+ "¿ø");
-			System.out.println   ("¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");			
-			System.out.println   ("  [½Å ¿ë Áö ºÒ]");
-			System.out.println   ("  *** ½Å¿ë½ÂÀÎÁ¤º¸(°í°´¿ë) ***");
-			System.out.println   ("  Ä« µå Á¾ ·ù  : ½Ö¿ë½Å¿ëÄ«µå");
-			System.out.println   ("  Ä« µå ¹ø È£  : ****-****-****-****");
-			System.out.println   ("  °á Á¦ ¹æ ½Ä  : ÀÏ½ÃºÒ");
+			System.out.println   ("  íŒ ë§¤ ì´ ì•¡  : " + hapmoney+ "ì›");
+			System.out.println   ("  ì¹´ë“œ ì§€ë¶ˆì•¡  : " + hapmoney+ "ì›");
+			System.out.println   ("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");			
+			System.out.println   ("  [ì‹  ìš© ì§€ ë¶ˆ]");
+			System.out.println   ("  *** ì‹ ìš©ìŠ¹ì¸ì •ë³´(ê³ ê°ìš©) ***");
+			System.out.println   ("  ì¹´ ë“œ ì¢… ë¥˜  : ìŒìš©ì‹ ìš©ì¹´ë“œ");
+			System.out.println   ("  ì¹´ ë“œ ë²ˆ í˜¸  : ****-****-****-****");
+			System.out.println   ("  ê²° ì œ ë°© ì‹  : ì¼ì‹œë¶ˆ");
 
-			System.out.println("\n  ±¸¸ÅÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù ¶Ç ÀÌ¿ëÇØÁÖ¼¼¿ä");
+			System.out.println("\n  êµ¬ë§¤í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤ ë˜ ì´ìš©í•´ì£¼ì„¸ìš”");
 
 		//plusAddCount();
 
-			// ÆÇ¸Å ÃÑ¾×À» ÀüÃ¼ ¸ÅÃâ¿¡ ³Ö±â
+			// íŒë§¤ ì´ì•¡ì„ ì „ì²´ ë§¤ì¶œì— ë„£ê¸°
 			
 			totalHap+=totlamoney;
 			totahap = totalHap;
 			ad.addSale(LocalDate.of(year, (month+1), day), totalHap);
 			
-			// ±×¸®°í ´Ù½Ã ÆÇÆĞ ÃÑ¾× 0À¸·Î ÃÊ±âÈ­
+			// ê·¸ë¦¬ê³  ë‹¤ì‹œ íŒíŒ¨ ì´ì•¡ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 			totlamoney=0;
 
-			// °áÁ¦µÈ °úÀÏÀ» pd_HuruList¿¡ ³Ö±â
+			// ê²°ì œëœ ê³¼ì¼ì„ pd_HuruListì— ë„£ê¸°
 			totalPdHuruList.putAll(huruList);
 			pd_HuruList1.putAll(huruList);
 			input();
 
-			// °í°´¿ë(ÆÇ¸Å¿ë) ½Ã½ºÅÛ ÀüÈ¯
+			// ê³ ê°ìš©(íŒë§¤ìš©) ì‹œìŠ¤í…œ ì „í™˜
 			Serial.fruitSet(); 
 			Serial.subSet(); 
-			//Á¤ÇÑ¿ï ½ÃÀÛ - ¿À·ù³ª¸é Áö¿ì±â
+			//ì •í•œìš¸ ì‹œì‘ - ì˜¤ë¥˜ë‚˜ë©´ ì§€ìš°ê¸°
 
 			Serial.totahapSet();
 			Serial.dailySalesSet();
@@ -440,7 +439,7 @@ public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
 			Serial.pdHuruListSet();
 			Serial.fruitCountsSet();
 
-			// Àå¹Ù±¸´Ï ÃÊ±âÈ­
+			// ì¥ë°”êµ¬ë‹ˆ ì´ˆê¸°í™”
 			for (int m = 1; m <= fru.fruits.size() ; m++)
 			{		
 				fru.fruits.get(m).setSTemp(0);
@@ -458,13 +457,13 @@ public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
 			//System.out.println(totahap);
 			
 			
-			// ¸ŞÀÎ¸Ş´º·Î µ¹¾Æ°¡±â
+			// ë©”ì¸ë©”ë‰´ë¡œ ëŒì•„ê°€ê¸°
 			ve.turnOn();
 
 		}
 		else if (choice ==2)
 		{
-			System.out.println("±¸¸ÅÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù ¶Ç ÀÌ¿ëÇØÁÖ¼¼¿ä");
+			System.out.println("êµ¬ë§¤í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤ ë˜ ì´ìš©í•´ì£¼ì„¸ìš”");
 
 			for (int i = 0; i < ShopingCart.priceList.size(); i++)
 			{	
@@ -477,12 +476,12 @@ public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
 			totahap = totalHap;
 			ad.addSale(LocalDate.of(year, (month+1), day), totalHap);
 			
-			// °áÁ¦µÈ °úÀÏÀ» pd_HuruList¿¡ ³Ö±â
+			// ê²°ì œëœ ê³¼ì¼ì„ pd_HuruListì— ë„£ê¸°
 			totalPdHuruList.putAll(huruList);
 			pd_HuruList1.putAll(huruList);
 			input();
 
-			// Àå¹Ù±¸´Ï ÃÊ±âÈ­
+			// ì¥ë°”êµ¬ë‹ˆ ì´ˆê¸°í™”
 			for (int m = 1; m <= fru.fruits.size() ; m++)
 			{		
 				fru.fruits.get(m).setSTemp(0);
@@ -497,7 +496,7 @@ public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
 			co.sugarCoatinList.clear();
 			setKeyCounter(1);
 			
-			// ¸ŞÀÎ¸Ş´º·Î µ¹¾Æ°¡´Â ÇÔ¼ö 
+			// ë©”ì¸ë©”ë‰´ë¡œ ëŒì•„ê°€ëŠ” í•¨ìˆ˜ 
 			ve.turnOn();
 		}
     }
@@ -509,25 +508,25 @@ public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
 
 		if (huruListForDate == null) 
 		{	
-			// ÇÁ·Î±×·¥ ½ÇÇà ÀÏÀÇ Å°ÀÇ °ªÀÌ null ÀÌ¶ó¸é »õ·Î¿î ±¸Á¶ »ı¼º
+			// í”„ë¡œê·¸ë¨ ì‹¤í–‰ ì¼ì˜ í‚¤ì˜ ê°’ì´ null ì´ë¼ë©´ ìƒˆë¡œìš´ êµ¬ì¡° ìƒì„±
 			huruListForDate = new ArrayList<>();
 		}
 
 		for (Map.Entry<Integer, ArrayList<String>> entry : huruList.entrySet()) 
 		{	
-			// ÇÁ·Î±×·¥ ½ÇÇà ÀÏÀÇ Å°ÀÇ °ªÀÌ null ÀÌ ¾Æ´Ï¶ó¸é Àå¹Ù±¸´Ï¿¡¼­ °áÁ¦¿Ï·á µÈ ÅÁÈÄ·çµéÀ» pdHuruList¿¡ Ãß°¡
+			// í”„ë¡œê·¸ë¨ ì‹¤í–‰ ì¼ì˜ í‚¤ì˜ ê°’ì´ null ì´ ì•„ë‹ˆë¼ë©´ ì¥ë°”êµ¬ë‹ˆì—ì„œ ê²°ì œì™„ë£Œ ëœ íƒ•í›„ë£¨ë“¤ì„ pdHuruListì— ì¶”ê°€
 			ArrayList<String> huruListA = entry.getValue();
 			
-			ArrayList<String> copyHuruList = new ArrayList<>(huruListA); // ¿øº» huruList¿¡ ¿µÇâÀ» Àı´ë ÁÖÁö ¾Êµµ·Ï ±íÀº º¹»ç ¼öÇà
+			ArrayList<String> copyHuruList = new ArrayList<>(huruListA); // ì›ë³¸ huruListì— ì˜í–¥ì„ ì ˆëŒ€ ì£¼ì§€ ì•Šë„ë¡ ê¹Šì€ ë³µì‚¬ ìˆ˜í–‰
 			huruListForDate.add(copyHuruList);
 		}
 
 		pdHuruList.put(date, huruListForDate);
-		//System.out.println("³¯Â¥º° ÀúÀå Å×½ºÆ® : " + pdHuruList);		// Å×½ºÆ®
+		//System.out.println("ë‚ ì§œë³„ ì €ì¥ í…ŒìŠ¤íŠ¸ : " + pdHuruList);		// í…ŒìŠ¤íŠ¸
 	}
 
 	
-	public static void plusAddCount() // ÃÑ °úÀÏ °¹¼ö ¼¼±â
+	public static void plusAddCount() // ì´ ê³¼ì¼ ê°¯ìˆ˜ ì„¸ê¸°
 	{
 		//Map<String, Integer> fruitCounts = new HashMap<>();
 
@@ -543,11 +542,11 @@ public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
 
 		for (Map.Entry<String, Integer> entry : fruitCounts.entrySet()) 
 			{
-				System.out.println(entry.getKey() + ": " + entry.getValue() + "°³");
+				System.out.println(entry.getKey() + ": " + entry.getValue() + "ê°œ");
 			}
 	}
 
-	public static void countFruits() // ³¯Â¥º° °úÀÏ °¹¼ö ¼¼±â
+	public static void countFruits() // ë‚ ì§œë³„ ê³¼ì¼ ê°¯ìˆ˜ ì„¸ê¸°
 	{
         for (Map.Entry<LocalDate, ArrayList<ArrayList<String>>> entry : pdHuruList.entrySet()) 
 			{
@@ -572,7 +571,7 @@ public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
 			}
     }
 
-	public static void plusAddCount1() // ÃÑ °úÀÏ °¹¼ö ¼¼±â
+	public static void plusAddCount1() // ì´ ê³¼ì¼ ê°¯ìˆ˜ ì„¸ê¸°
 	{
 		//Map<String, Integer> fruitCounts = new HashMap<>();
 
@@ -588,7 +587,7 @@ public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
 
 		for (Map.Entry<String, Integer> entry : fruitCounts1.entrySet()) 
 			{
-				System.out.println(entry.getKey() + ": " + entry.getValue() + "°³");
+				System.out.println(entry.getKey() + ": " + entry.getValue() + "ê°œ");
 			}
 	}
 	public static void countTotalFruits() {
@@ -604,24 +603,24 @@ public void cardPay() throws IOException// Ä«µå °áÁ¦ ÇÔ¼ö
 
     // Print total fruit counts
 	System.out.println();
-    System.out.println("´©Àû :");
+    System.out.println("ëˆ„ì  :");
     for (Map.Entry<String, Integer> fruitCountEntry : fruitCounts.entrySet()) {
         System.out.println(fruitCountEntry.getKey() + ": " + fruitCountEntry.getValue());
     }
 }
 
-// °úÀÏ Á¶ÇÕ ÆÇ¸Å °³¼ö ¿Ã¶ó°¡´Â ÇÔ¼ö // °ü¸®ÀÚ¸ğµå¿¡¼­¸¸ º¼ ¼ö ÀÖÀ½ 
+// ê³¼ì¼ ì¡°í•© íŒë§¤ ê°œìˆ˜ ì˜¬ë¼ê°€ëŠ” í•¨ìˆ˜ // ê´€ë¦¬ìëª¨ë“œì—ì„œë§Œ ë³¼ ìˆ˜ ìˆìŒ 
 
 public static void typefru() 
 {
-    System.out.println("°úÀÏ Á¶ÇÕº° ÆÇ¸Å °³¼ö:");
+    System.out.println("ê³¼ì¼ ì¡°í•©ë³„ íŒë§¤ ê°œìˆ˜:");
     HashMap<String, Integer> fruitTypeCount = new HashMap<>();
 
     for (Map.Entry<LocalDate, ArrayList<ArrayList<String>>> entry : pdHuruList.entrySet()) 
 	{
         LocalDate date = entry.getKey();
         System.out.println("");
-        System.out.println(date + " ÆÇ¸Å °¹¼ö " + entry.getValue().size() + "°³");
+        System.out.println(date + " íŒë§¤ ê°¯ìˆ˜ " + entry.getValue().size() + "ê°œ");
 		 System.out.println();
 
         for (ArrayList<String> huru : entry.getValue()) 
@@ -638,7 +637,7 @@ public static void typefru()
 
     
     for (Map.Entry<String, Integer> entry : fruitTypeCount.entrySet()) {
-        System.out.println("["+entry.getKey() + "] " + entry.getValue() + "°³");
+        System.out.println("["+entry.getKey() + "] " + entry.getValue() + "ê°œ");
     }
 }
 
@@ -648,7 +647,7 @@ public static void typefru()
 
 
 	
-	public static void main(String [] args) // Å×½ºÆ®¿ë ¸ŞÀÎ ÇÔ¼ö  
+	public static void main(String [] args) // í…ŒìŠ¤íŠ¸ìš© ë©”ì¸ í•¨ìˆ˜  
 	{
 		/*
 		ShopingCart sh = new ShopingCart();
