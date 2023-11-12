@@ -1,10 +1,11 @@
 import java.io.Serializable;
+
 class SubProducts implements Serializable
 {
 	private String name;
-	private int stock;		// Àç°í
-	private int count;		// °è»ê Ä«¿îÅÍ /°áÁ¦½Ã 0 ÃÊ±âÈ­ 
-	private int	total;	// ´©Àû Ä«¿îÅÍ /°áÁ¦½Ã Ä«¿îÆ®¸¸Å­ ´©Àû
+	private int stock;		// ì¬ê³ 
+	private int count;		// ê³„ì‚° ì¹´ìš´í„° /ê²°ì œì‹œ 0 ì´ˆê¸°í™” 
+	private int	total;	// ëˆ„ì  ì¹´ìš´í„° /ê²°ì œì‹œ ì¹´ìš´íŠ¸ë§Œí¼ ëˆ„ì 
 	private int max;
 
 	SubProducts(String name,int stock, int max)
