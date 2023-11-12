@@ -1,18 +1,17 @@
 /*
-[ºÎÀÚÀç °ü¸®]
+[ë¶€ìì¬ ê´€ë¦¬]
+ê³¼ì¼ ë° ë¶€ìì¬ ê´€ë¦¬ì—ì„œ 2) ë¥¼ ì„ íƒí•˜ë©´ í•´ë‹¹ ì‹œìŠ¤í…œ ì ‘ê·¼
 
-°úÀÏ ¹× ºÎÀÚÀç °ü¸®¿¡¼­ 2) ¸¦ ¼±ÅÃÇÏ¸é ÇØ´ç ½Ã½ºÅÛ Á¢±Ù
+ 2) ë¶€ìì¬ ê´€ë¦¬
+  2-1) ì„¤íƒ• ì¬ê³  ê´€ë¦¬
+  2-2) ê¼¬ì¹˜ ì¬ê³  ê´€ë¦¬
+  2-3) ë’¤ë¡œê°€ê¸°
 
- 2) ºÎÀÚÀç °ü¸®
-  2-1) ¼³ÅÁ Àç°í °ü¸®
-  2-2) ²¿Ä¡ Àç°í °ü¸®
-  2-3) µÚ·Î°¡±â
+*ë©”ì†Œë“œ êµ¬ì„±*
 
-*¸Ş¼Òµå ±¸¼º*
+#1 2-1) ~ 2-3) ê¸°ëŠ¥ì„ ì„ íƒí•˜ëŠ” ë©”ì†Œë“œ
 
-#1 2-1) ~ 2-3) ±â´ÉÀ» ¼±ÅÃÇÏ´Â ¸Ş¼Òµå
-
-#2 ¼±ÅÃÇÑ »óÇ° Àç°í °ü¸® ¸Ş¼Òµå
+#2 ì„ íƒí•œ ìƒí’ˆ ì¬ê³  ê´€ë¦¬ ë©”ì†Œë“œ
 
 */
 import java.util.Scanner;
@@ -24,39 +23,39 @@ class AdSub extends AdSetting
 	void subSelect() throws IOException
 	{
 		Scanner sc = new Scanner(System.in);
-		int number = 0;			// ¼±ÅÃ°ª ÀúÀåÇÒ º¯¼ö
-		boolean temp = false;	// ¹İº¹¹®¿ë ºÒ¸° º¯¼ö
+		int number = 0;			// ì„ íƒê°’ ì €ì¥í•  ë³€ìˆ˜
+		boolean temp = false;	// ë°˜ë³µë¬¸ìš© ë¶ˆë¦° ë³€ìˆ˜
 
-		System.out.println("\n\t[ºÎÀÚÀç °ü¸®]");
-		System.out.println("[1] ¼³ÅÁ Àç°í °ü¸®");
-		System.out.println("[2] ²¿Ä¡ Àç°í °ü¸®");
-		System.out.println("[3] µÚ·Î°¡±â");
+		System.out.println("\n\t[ë¶€ìì¬ ê´€ë¦¬]");
+		System.out.println("[1] ì„¤íƒ• ì¬ê³  ê´€ë¦¬");
+		System.out.println("[2] ê¼¬ì¹˜ ì¬ê³  ê´€ë¦¬");
+		System.out.println("[3] ë’¤ë¡œê°€ê¸°");
 
-		do	// »ç¿ëÀÚ°¡ Á¦´ë·Î(1~3 Á¤¼öÇü) ÀÔ·ÂÇÒ¶§±îÁö ¹İº¹
+		do	// ì‚¬ìš©ìê°€ ì œëŒ€ë¡œ(1~3 ì •ìˆ˜í˜•) ì…ë ¥í• ë•Œê¹Œì§€ ë°˜ë³µ
 		{
-			System.out.print("\n½ÇÇàÇÒ ±â´ÉÀ» ¼±ÅÃÇÏ¼¼¿ä. : ");
-			try	// ¸» ¾È µè°í ÀÌ»óÇÏ°Ô ÀÔ·ÂÇßÀ»¶§ ´ëºñ¿ë
+			System.out.print("\nì‹¤í–‰í•  ê¸°ëŠ¥ì„ ì„ íƒí•˜ì„¸ìš”. : ");
+			try	// ë§ ì•ˆ ë“£ê³  ì´ìƒí•˜ê²Œ ì…ë ¥í–ˆì„ë•Œ ëŒ€ë¹„ìš©
 			{
 				number = sc.nextInt();
-				temp = false;	// ¿©±â´Â ¿À·ù°¡ ¾È ³ª¾ß ½ÇÇà
+				temp = false;	// ì—¬ê¸°ëŠ” ì˜¤ë¥˜ê°€ ì•ˆ ë‚˜ì•¼ ì‹¤í–‰
 			}
 			catch (Exception e)
 			{
-				System.out.println("\n¡ØÀÔ·Â¿À·ù¡Ø");
-				System.out.println("1ÀÌ»ó 3ÀÌÇÏÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+				System.out.println("\nâ€»ì…ë ¥ì˜¤ë¥˜â€»");
+				System.out.println("1ì´ìƒ 3ì´í•˜ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 				sc.nextLine();
-				temp = true;	// ¿À·ù³ª¼­ temp true·Î ¹Ù²î¸é
+				temp = true;	// ì˜¤ë¥˜ë‚˜ì„œ temp trueë¡œ ë°”ë€Œë©´
 			}
 		}
-		while (temp);			// Á¦´ë·Î ÇÒ ¶§±îÁö ¹İº¹
+		while (temp);			// ì œëŒ€ë¡œ í•  ë•Œê¹Œì§€ ë°˜ë³µ
 		if (number==3)
 			super.setSelect();
 		else if (number==1||number==2)
 			subEdit(number);
 		else
 		{
-			System.out.println("\n¡ØÀÔ·Â¿À·ù¡Ø");
-			System.out.println("1ÀÌ»ó 3ÀÌÇÏÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+			System.out.println("\nâ€»ì…ë ¥ì˜¤ë¥˜â€»");
+			System.out.println("1ì´ìƒ 3ì´í•˜ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 			subSelect();
 		}
 			
@@ -70,19 +69,19 @@ class AdSub extends AdSetting
 		int oldStock=Sub.sub.get(number).getStock();
 		boolean temp = true;
 
-		System.out.printf("\n[%s]ÀÇ Àç°í¸¦ º¯°æÇÕ´Ï´Ù.",Sub.sub.get(number).getName());
+		System.out.printf("\n[%s]ì˜ ì¬ê³ ë¥¼ ë³€ê²½í•©ë‹ˆë‹¤.",Sub.sub.get(number).getName());
 		do
 		{
 			try
 			{
-				System.out.println("\nÀç°í Ãß°¡ - ¾ç¼ö ÀÔ·Â / Àç°í °¨¼Ò - À½¼ö ÀÔ·Â");
-				System.out.printf("ÇöÀç Àç°í [%d] ¡æ º¯°æÇÒ Àç°í : ",oldStock);
+				System.out.println("\nì¬ê³  ì¶”ê°€ - ì–‘ìˆ˜ ì…ë ¥ / ì¬ê³  ê°ì†Œ - ìŒìˆ˜ ì…ë ¥");
+				System.out.printf("í˜„ì¬ ì¬ê³  [%d] â†’ ë³€ê²½í•  ì¬ê³  : ",oldStock);
 				su = sc.nextInt();
 				if (su<0)
 				{
 					if (oldStock+su<0)
 					{
-						System.out.println("Àç°í´Â [0] ¹Ì¸¸ÀÌ µÉ ¼ö ¾ø½À´Ï´Ù.");
+						System.out.println("ì¬ê³ ëŠ” [0] ë¯¸ë§Œì´ ë  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 						temp = true;
 					}
 					else
@@ -92,12 +91,12 @@ class AdSub extends AdSetting
 				{
 					if (su>Sub.sub.get(number).getMax())
 					{
-						System.out.printf("Àç°í´Â [%d] ÀÌÇÏ·Î¸¸ ÀÔ·ÂÇÒ ¼ö ÀÖ½À´Ï´Ù.\n",Sub.sub.get(number).getMax());
+						System.out.printf("ì¬ê³ ëŠ” [%d] ì´í•˜ë¡œë§Œ ì…ë ¥í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.\n",Sub.sub.get(number).getMax());
 						temp = true;
 					}
 					else if (oldStock+su>Sub.sub.get(number).getMax())
 					{
-						System.out.printf("Àç°í´Â [%d] À»(¸¦) ÃÊ°ú ÇÒ ¼ö ¾ø½À´Ï´Ù.",Sub.sub.get(number).getMax());
+						System.out.printf("ì¬ê³ ëŠ” [%d] ì„(ë¥¼) ì´ˆê³¼ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.",Sub.sub.get(number).getMax());
 						temp = true;
 					}
 					else
@@ -106,25 +105,25 @@ class AdSub extends AdSetting
 			}
 			catch (Exception e)
 			{
-				System.out.println("\n¡ØÀÔ·Â ¿À·ù¡Ø");
-				System.out.printf("[%d] ÀÌÇÏÀÇ ¼ıÀÚÇüÅÂ·Î ÀÔ·ÂÇÒ ¼ö ÀÖ½À´Ï´Ù.",Sub.sub.get(number).getMax());
+				System.out.println("\nâ€»ì…ë ¥ ì˜¤ë¥˜â€»");
+				System.out.printf("[%d] ì´í•˜ì˜ ìˆ«ìí˜•íƒœë¡œ ì…ë ¥í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.",Sub.sub.get(number).getMax());
 				sc.nextLine();
 				temp = true;
 			}
 		}
 		while (temp);
 
-		System.out.printf("%sÀÇ Àç°í [%d ¡æ %d]·Î º¯°æÇÏ½Ã°Ú½À´Ï±î?(Y/N) : ",Sub.sub.get(number).getName(),oldStock,oldStock+su);
+		System.out.printf("%sì˜ ì¬ê³  [%d â†’ %d]ë¡œ ë³€ê²½í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/N) : ",Sub.sub.get(number).getName(),oldStock,oldStock+su);
 		String answer = sc.next();
 		if (answer.equals("Y")||answer.equals("y"))
 		{
 			Sub.sub.get(number).setStock(oldStock+su);
-			System.out.println("\nº¯°æÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+			System.out.println("\në³€ê²½ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 			subSelect();
 		}
 		else
 		{
-			System.out.println("\nº¯°æÀ» Ãë¼ÒÇÕ´Ï´Ù.");
+			System.out.println("\në³€ê²½ì„ ì·¨ì†Œí•©ë‹ˆë‹¤.");
 			subSelect();
 		}
 	}// subEdit()
