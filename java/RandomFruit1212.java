@@ -1,18 +1,17 @@
 import java.util.*;
 import java.io.IOException;
 
-
 public class RandomFruit1212 
 {
-	static List<String> huru = new ArrayList<String>(); // °úÀÏÀÇ ÀÌ¸§À» ÀúÀåÇÒ huru 
+	static List<String> huru = new ArrayList<String>(); // ê³¼ì¼ì˜ ì´ë¦„ì„ ì €ì¥í•  huru 
 
-	// ³­¼ö¸¦ ¹ß»ı ½ÃÄÑ ·£´ıÀ¸·Î Ãâ·Â µÉ °úÀÏµéÀÇ Á¤º¸¸¦ ´ãÀ» selectedFruits
+	// ë‚œìˆ˜ë¥¼ ë°œìƒ ì‹œì¼œ ëœë¤ìœ¼ë¡œ ì¶œë ¥ ë  ê³¼ì¼ë“¤ì˜ ì •ë³´ë¥¼ ë‹´ì„ selectedFruits
 	public static List<FruitsProducts> selectedFruits = new ArrayList<>(); 
 	static List<FruitsProducts> allRandomFruits = new ArrayList<>();
 	
-	Coating ct = new Coating(); // ÄÚÆÃ Å¬·¡½º ÀÎ½ºÅÏ½º»ı¼º
+	Coating ct = new Coating(); // ì½”íŒ… í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ìƒì„±
 
-	VendingMachine vm = new VendingMachine(); // ¹êµù¸Ó½Å ÀÎ½ºÅÏ½º »ı¼º
+	VendingMachine vm = new VendingMachine(); // ë°´ë”©ë¨¸ì‹  ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 
 	int[] temp = new int[10];
 
@@ -20,9 +19,9 @@ public class RandomFruit1212
 	{
 		if (Sub.sub.get(1).getStock() < 30 && Sub.sub.get(2).getStock() < 1)
 		{
-			System.out.println("ÇöÀç ¼³ÅÁ°ú ²¿Ä¡°¡ ºÎÁ·ÇÕ´Ï´Ù.");
-			System.out.println("´õ ÀÌ»ó ÁÖ¹® ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-			System.out.println("Àå¹Ù±¸´Ï·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+			System.out.println("í˜„ì¬ ì„¤íƒ•ê³¼ ê¼¬ì¹˜ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+			System.out.println("ë” ì´ìƒ ì£¼ë¬¸ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+			System.out.println("ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™í•©ë‹ˆë‹¤.");
 
 			
 			ShopingCart cart = new ShopingCart();
@@ -31,9 +30,9 @@ public class RandomFruit1212
 		}
 		else if (Sub.sub.get(2).getStock() < 1)
 		{
-			System.out.println("²¿Ä¡°¡ ºÎÁ·ÇÕ´Ï´Ù.");
-			System.out.println("´õ ÀÌ»ó ÁÖ¹® ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-			System.out.println("Àå¹Ù±¸´Ï·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+			System.out.println("ê¼¬ì¹˜ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+			System.out.println("ë” ì´ìƒ ì£¼ë¬¸ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+			System.out.println("ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™í•©ë‹ˆë‹¤.");
 
 			
 			ShopingCart cart = new ShopingCart();
@@ -42,9 +41,9 @@ public class RandomFruit1212
 		}
 		else if (Sub.sub.get(1).getStock() < 30)
 		{
-			System.out.println("¼³ÅÁÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
-			System.out.println("´õ ÀÌ»ó ÁÖ¹® ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-			System.out.println("Àå¹Ù±¸´Ï·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+			System.out.println("ì„¤íƒ•ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+			System.out.println("ë” ì´ìƒ ì£¼ë¬¸ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+			System.out.println("ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™í•©ë‹ˆë‹¤.");
 		
 			ShopingCart cart = new ShopingCart();
 
@@ -52,9 +51,9 @@ public class RandomFruit1212
 		}
 		else 	
 		{
-			System.out.println(" \n   ¿øÇÏ´Â °úÀÏÀ» ¼±ÅÃÇØÁÖ¼¼¿ä! (size 6 ÃÊ°ú ¥¹)");
-			System.out.println("   ¡Ø [] ¾ÈÀÇ ¼ıÀÚ°¡ »çÀÌÁî ÀÔ´Ï´Ù.");
-			System.out.println("  ¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
+			System.out.println(" \n   ì›í•˜ëŠ” ê³¼ì¼ì„ ì„ íƒí•´ì£¼ì„¸ìš”! (size 6 ì´ˆê³¼ â…©)");
+			System.out.println("   â€» [] ì•ˆì˜ ìˆ«ìê°€ ì‚¬ì´ì¦ˆ ì…ë‹ˆë‹¤.");
+			System.out.println("  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
 
 			for (int i = 0; i < Fruits.fruits.size();) 
 			{
@@ -65,7 +64,7 @@ public class RandomFruit1212
 						temp[i] = j;
 						if (Fruits.fruits.get(j).getSize() * Fruits.fruits.get(j).getStock() <= 6)
 						{
-							System.out.printf("%5d. %s [%d] (Ç°Àı)", (i + 1), Fruits.fruits.get(j).getName(),
+							System.out.printf("%5d. %s [%d] (í’ˆì ˆ)", (i + 1), Fruits.fruits.get(j).getName(),
 									Fruits.fruits.get(j).getSize());
 						} 
 						else	
@@ -83,7 +82,7 @@ public class RandomFruit1212
 			}
 
 			System.out.println();
-			System.out.println("  ¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
+			System.out.println("  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”");
 			runRd();
 		}
 	}
@@ -91,50 +90,50 @@ public class RandomFruit1212
     public void runRd() throws IOException
 	{
 		Scanner sc = new Scanner(System.in);
-		Fruits fruits = new Fruits(); // Fruits °´Ã¼ »ı¼º, °úÀÏ Á¤º¸¸¦ °¡Áö°í ÀÖÀ½
+		Fruits fruits = new Fruits(); // Fruits ê°ì²´ ìƒì„±, ê³¼ì¼ ì •ë³´ë¥¼ ê°€ì§€ê³  ìˆìŒ
 		
 		while (true) 
 		{
-			huru.clear(); // ÀÌÀü °úÀÏÀÇ Á¤º¸¸¦ ´©Àû ÇÏÁö ¾Êµµ·Ï huru ¸¦ ÃÊ±âÈ­
+			huru.clear(); // ì´ì „ ê³¼ì¼ì˜ ì •ë³´ë¥¼ ëˆ„ì  í•˜ì§€ ì•Šë„ë¡ huru ë¥¼ ì´ˆê¸°í™”
 			
-			System.out.println("   ·£´ı ÅÁÈÄ·ç ÃßÃµÀ» ¹ŞÀ¸½Ã°Ú½À´Ï±î?");
-			System.out.println("   [1] ¿¹ / [2] ¾Æ´Ï¿À(¸ŞÀÎ¸Ş´º) ");
-			System.out.print("   ¢º ");
+			System.out.println("   ëœë¤ íƒ•í›„ë£¨ ì¶”ì²œì„ ë°›ìœ¼ì‹œê² ìŠµë‹ˆê¹Œ?");
+			System.out.println("   [1] ì˜ˆ / [2] ì•„ë‹ˆì˜¤(ë©”ì¸ë©”ë‰´) ");
+			System.out.print("   â–¶ ");
 			int choice = sc.nextInt();
-			sc.nextLine(); // °³Çà ¹®ÀÚ Ã³¸®
+			sc.nextLine(); // ê°œí–‰ ë¬¸ì ì²˜ë¦¬
 
 			if (choice == 1) 
 			{
-				Random rd = new Random(); // ·£´ı ÀÎ½ºÅÏ½º »ı¼º 
+				Random rd = new Random(); // ëœë¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„± 
 
-				int totalSize = 0; // Ãâ·ÂµÈ °úÀÏÀÇ ÀüÃ¼ »çÀÌÁî ÇÕ ÃÊ±âÈ­
-				int totalPrice = 0; // ÀüÃ¼ °úÀÏ °¡°İ ÇÕ°è ÃÊ±âÈ­
+				int totalSize = 0; // ì¶œë ¥ëœ ê³¼ì¼ì˜ ì „ì²´ ì‚¬ì´ì¦ˆ í•© ì´ˆê¸°í™”
+				int totalPrice = 0; // ì „ì²´ ê³¼ì¼ ê°€ê²© í•©ê³„ ì´ˆê¸°í™”
 
-				// »ç¿ë °¡´ÉÇÑ °úÀÏ ÀÎµ¦½º¸¦ ÀúÀåÇÏ´Â ¸®½ºÆ® ÃÊ±âÈ­
+				// ì‚¬ìš© ê°€ëŠ¥í•œ ê³¼ì¼ ì¸ë±ìŠ¤ë¥¼ ì €ì¥í•˜ëŠ” ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
 				List<Integer> availableFruitIndices = new ArrayList();
 
 				
 				
-				// »õ·Î¿î ÀÚ·á±¸Á¶¿¡ ¸ğµç ·£´ı ÃßÃµµÈ °úÀÏ Á¤º¸¸¦ Ãß°¡
+				// ìƒˆë¡œìš´ ìë£Œêµ¬ì¡°ì— ëª¨ë“  ëœë¤ ì¶”ì²œëœ ê³¼ì¼ ì •ë³´ë¥¼ ì¶”ê°€
                 
 
 				for (int i = 1; i <= fruits.fruits.size(); i++) 
 				{
-					FruitsProducts fruit = fruits.fruits.get(i);		// availableFruitIndices ¿¡ À¯È¿ÇÑ °úÀÏµéÀ» ´ã¾Æ 
-																		// °úÀÏÀ» ·£´ıÀ¸·Î ¼±ÅÃÇÏ´Âµ¥¿¡ »ç¿ëÇÔ 
-					if (fruit.getSize() > 0 && fruit.getStock() > 6)  // Àç°í°¡ 6°³ ÃÊ°úÀÎ °úÀÏ¸¸ ¼±ÅÃ ±×¸®°í »çÀÌÁî°¡ 0 ÀÌ»óÀÎ °úÀÏ ¼±ÅÃ
+					FruitsProducts fruit = fruits.fruits.get(i);		// availableFruitIndices ì— ìœ íš¨í•œ ê³¼ì¼ë“¤ì„ ë‹´ì•„ 
+																		// ê³¼ì¼ì„ ëœë¤ìœ¼ë¡œ ì„ íƒí•˜ëŠ”ë°ì— ì‚¬ìš©í•¨ 
+					if (fruit.getSize() > 0 && fruit.getStock() > 6)  // ì¬ê³ ê°€ 6ê°œ ì´ˆê³¼ì¸ ê³¼ì¼ë§Œ ì„ íƒ ê·¸ë¦¬ê³  ì‚¬ì´ì¦ˆê°€ 0 ì´ìƒì¸ ê³¼ì¼ ì„ íƒ
 					{
-						availableFruitIndices.add(i); // Àç°í¿Í »çÀÌÁî°¡ 0 ÀÌ»óÀÎ °úÀÏÀÇ ÀÎµ¦½º¸¦ ÀúÀå
+						availableFruitIndices.add(i); // ì¬ê³ ì™€ ì‚¬ì´ì¦ˆê°€ 0 ì´ìƒì¸ ê³¼ì¼ì˜ ì¸ë±ìŠ¤ë¥¼ ì €ì¥
 					}
 				}
 
-					 // »õ·Î¿î Á¶°Ç: availableFruitIndices°¡ ºñ¾î ÀÖ´Ù¸é ¸ğµç °úÀÏÀÌ Ç°Àı
-					 selectedFruits.clear(); //  huru ¿Í ¸¶Âù°¡Áö·Î ´©ÀûµÇ¼­ Ãâ·ÂµÇÁö ¾Êµµ·Ï selectedFruits ¸¦ ÃÊ±âÈ­ 
+					 // ìƒˆë¡œìš´ ì¡°ê±´: availableFruitIndicesê°€ ë¹„ì–´ ìˆë‹¤ë©´ ëª¨ë“  ê³¼ì¼ì´ í’ˆì ˆ
+					 selectedFruits.clear(); //  huru ì™€ ë§ˆì°¬ê°€ì§€ë¡œ ëˆ„ì ë˜ì„œ ì¶œë ¥ë˜ì§€ ì•Šë„ë¡ selectedFruits ë¥¼ ì´ˆê¸°í™” 
 
 					if (availableFruitIndices.isEmpty())
 					{
-						System.out.println("\n   °úÀÏÀÌ ¸ğµÎ ¼ÒÁøµÇ¾ú½À´Ï´Ù.");
-						System.out.println("   ¸ŞÀÎ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù.");
+						System.out.println("\n   ê³¼ì¼ì´ ëª¨ë‘ ì†Œì§„ë˜ì—ˆìŠµë‹ˆë‹¤.");
+						System.out.println("   ë©”ì¸ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
 						vm.turnOn();
 					} 
 					else
@@ -147,23 +146,23 @@ public class RandomFruit1212
 						FruitsProducts rdFruit = fruits.fruits.get(rdFruitIndex);
 						int fruitSize = rdFruit.getSize();
 
-						// ÀüÃ¼ »çÀÌÁî ÇÕÀÌ 6 ÀÌÇÏÀÎ °úÀÏ¸¸ ¼±ÅÃ ££Áß¿ä
+						// ì „ì²´ ì‚¬ì´ì¦ˆ í•©ì´ 6 ì´í•˜ì¸ ê³¼ì¼ë§Œ ì„ íƒ ï¼ƒì¤‘ìš”
 						if (totalSize + fruitSize <= 6) 
 						{
-							selectedFruits.add(rdFruit); // °úÀÏÀ» ¼±ÅÃ ¸ñ·Ï¿¡ Ãß°¡
+							selectedFruits.add(rdFruit); // ê³¼ì¼ì„ ì„ íƒ ëª©ë¡ì— ì¶”ê°€
 							totalSize += fruitSize;
 
 							if (rdFruit.getStock() <= 1) 
 							{
-								// Àç°í°¡ 1°³ ³²Àº °æ¿ì, ÇØ´ç °úÀÏÀº ´ÙÀ½¿¡´Â ¼±ÅÃÇÏÁö ¾Êµµ·Ï ÀÎµ¦½º Á¦°Å
+								// ì¬ê³ ê°€ 1ê°œ ë‚¨ì€ ê²½ìš°, í•´ë‹¹ ê³¼ì¼ì€ ë‹¤ìŒì—ëŠ” ì„ íƒí•˜ì§€ ì•Šë„ë¡ ì¸ë±ìŠ¤ ì œê±°
 								availableFruitIndices.remove(rdIndex);
 							}
 
-							totalPrice += rdFruit.getPrice();  //  °¡°İµéÀ» ÇÕÇÑ´Ù.
+							totalPrice += rdFruit.getPrice();  //  ê°€ê²©ë“¤ì„ í•©í•œë‹¤.
 
 							if (totalSize == 6) 
 							{
-								break; // ÀüÃ¼ »çÀÌÁî ÇÕÀÌ 6ÀÌ µÇ¸é ¼±ÅÃ Á¾·á
+								break; // ì „ì²´ ì‚¬ì´ì¦ˆ í•©ì´ 6ì´ ë˜ë©´ ì„ íƒ ì¢…ë£Œ
 							}
 						} 
 						else
@@ -177,7 +176,7 @@ public class RandomFruit1212
 					
 
 					
-					// selectedFruits ¸®½ºÆ®¿¡ ÀÖ´Â ¼±ÅÃµÈ °úÀÏµéÀÇ ÀÌ¸§ÀÌ huru ¸®½ºÆ®¿¡ Ãß°¡ 
+					// selectedFruits ë¦¬ìŠ¤íŠ¸ì— ìˆëŠ” ì„ íƒëœ ê³¼ì¼ë“¤ì˜ ì´ë¦„ì´ huru ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€ 
 					for (int i = 0; i < selectedFruits.size(); i++) 
 					{
 						 FruitsProducts randomFruit = selectedFruits.get(i);
@@ -186,31 +185,31 @@ public class RandomFruit1212
 						
 					}
 					
-					// »ç¿ëÀÚ¿¡°Ô ·£´ıÀ¸·Î Ãâ·ÂµÈ °úÀÏ°ú ±× °úÀÏÀÇ »çÀÌÁî 
-					// °úÀÏ °¡°İµéÀ» ÇÕ»êÇÏ¿© °¡°İ ±îÁö Ãâ·ÂÇØ¼­ º¸¿©ÁÜ 
-					System.out.println("\n   ·£´ıÀ¸·Î ÃßÃµµÈ °úÀÏ:");
+					// ì‚¬ìš©ìì—ê²Œ ëœë¤ìœ¼ë¡œ ì¶œë ¥ëœ ê³¼ì¼ê³¼ ê·¸ ê³¼ì¼ì˜ ì‚¬ì´ì¦ˆ 
+					// ê³¼ì¼ ê°€ê²©ë“¤ì„ í•©ì‚°í•˜ì—¬ ê°€ê²© ê¹Œì§€ ì¶œë ¥í•´ì„œ ë³´ì—¬ì¤Œ 
+					System.out.println("\n   ëœë¤ìœ¼ë¡œ ì¶”ì²œëœ ê³¼ì¼:");
 					for (int i = 0; i < selectedFruits.size(); i++) 
 					{
 						FruitsProducts randomFruit = selectedFruits.get(i);
 						System.out.println("   "+ (i + 1) + ". " + randomFruit.getName() + " [" + randomFruit.getSize() + "]");
-						// ÃßÃµµÈ °úÀÏÀÇ ÀÌ¸§°ú »çÀÌÁî Ãâ·Â
+						// ì¶”ì²œëœ ê³¼ì¼ì˜ ì´ë¦„ê³¼ ì‚¬ì´ì¦ˆ ì¶œë ¥
 					}
-					System.out.println("\n   ÀüÃ¼ °¡°İ: " + totalPrice + "¿ø"); // ÀüÃ¼ °¡°İ Ãâ·Â
+					System.out.println("\n   ì „ì²´ ê°€ê²©: " + totalPrice + "ì›"); // ì „ì²´ ê°€ê²© ì¶œë ¥
 				
 					
-					// À§ ±¸¹®À» ¼öÇà ÈÄ ¼±ÅÃ ¿É¼Ç Ãâ·Â
+					// ìœ„ êµ¬ë¬¸ì„ ìˆ˜í–‰ í›„ ì„ íƒ ì˜µì…˜ ì¶œë ¥
 					while (true)
 					{
 					
-						System.out.println("\n   ¿øÇÏ½Ã´Â ¿É¼Ç ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä. ");
-						System.out.println("   [1] ¼³ÅÁ ÀÔÈ÷·¯ °¡±â / [2] ´Ù½Ã ÃßÃµ ¹Ş±â / [3] ¸ŞÀÎ¸Ş´º ");
-						System.out.print("   ¢º ");
+						System.out.println("\n   ì›í•˜ì‹œëŠ” ì˜µì…˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”. ");
+						System.out.println("   [1] ì„¤íƒ• ì…íˆëŸ¬ ê°€ê¸° / [2] ë‹¤ì‹œ ì¶”ì²œ ë°›ê¸° / [3] ë©”ì¸ë©”ë‰´ ");
+						System.out.print("   â–¶ ");
 						int sugarOption = sc.nextInt();
-						sc.nextLine(); // °³Çà ¹®ÀÚ Ã³¸®
+						sc.nextLine(); // ê°œí–‰ ë¬¸ì ì²˜ë¦¬
 
 							if (sugarOption == 1)					
 							{		
-							// ¸ğµç ·£´ı ÃßÃµµÈ °úÀÏ Á¤º¸¸¦ »õ·Î¿î ÀÚ·á±¸Á¶¿¡ Ãß°¡
+							// ëª¨ë“  ëœë¤ ì¶”ì²œëœ ê³¼ì¼ ì •ë³´ë¥¼ ìƒˆë¡œìš´ ìë£Œêµ¬ì¡°ì— ì¶”ê°€
 							 allRandomFruits.addAll(selectedFruits);
 					
 							ShopingCart ob = new ShopingCart();
@@ -225,7 +224,7 @@ public class RandomFruit1212
 						{
 							
 
-							// selectedFruits¸¦ ÃÊ±âÈ­
+							// selectedFruitsë¥¼ ì´ˆê¸°í™”
 							selectedFruits.clear();
 
 							System.out.println();
@@ -236,24 +235,24 @@ public class RandomFruit1212
 							vm.turnOn();
 						}
 						else
-							System.out.println("\n  ¿Ã¹Ù¸¥ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä!\n");
+							System.out.println("\n  ì˜¬ë°”ë¥¸ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”!\n");
 					}
 			} 
-			else if (choice == 2)  // 2¹øÀ» ´©¸¦½Ã ¸ŞÀÎ¸Ş´º·Î ÀÌµ¿
+			else if (choice == 2)  // 2ë²ˆì„ ëˆ„ë¥¼ì‹œ ë©”ì¸ë©”ë‰´ë¡œ ì´ë™
 			{
 				System.out.println();
 				vm.turnOn();
 				
 			}
 			else
-				System.out.println("\n  ¿Ã¹Ù¸¥ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä!\n");
+				System.out.println("\n  ì˜¬ë°”ë¥¸ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”!\n");
 
 		}
 
 
 	}
 
-	// ´Ù¸¥ Å¬·¡½º¿¡¼­ selectedFruits¿¡ Á¢±Ù ÇÒ ¼ö ÀÖµµ·Ï ¸Ş¼Òµå »ı¼º
+	// ë‹¤ë¥¸ í´ë˜ìŠ¤ì—ì„œ selectedFruitsì— ì ‘ê·¼ í•  ìˆ˜ ìˆë„ë¡ ë©”ì†Œë“œ ìƒì„±
 	public List<FruitsProducts> getSelectedFruits() 
 	{
     return selectedFruits;
