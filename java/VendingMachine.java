@@ -1,16 +1,15 @@
 import java.util.Scanner;
 import java.util.Map;
 import java.io.IOException;
-
 class VendingMachine implements VmMenu
 {	
 	int menuSel;
-	public final int T_ORDER = 1;			// ÁÖ¹®ÇÏ±â
-	public final int T_POPULAR_DISH = 2;	// ÀÎ±â TOP3
-	public final int T_CART = 3;			// Àå¹Ù±¸´Ï
-	public final int T_ADMIN_MODE = 4;		// °ü¸®ÀÚ¸ğµå
+	public final int T_ORDER = 1;			// ì£¼ë¬¸í•˜ê¸°
+	public final int T_POPULAR_DISH = 2;	// ì¸ê¸° TOP3
+	public final int T_CART = 3;			// ì¥ë°”êµ¬ë‹ˆ
+	public final int T_ADMIN_MODE = 4;		// ê´€ë¦¬ìëª¨ë“œ
 
-	private static final String ADMIN_PASSWORD = "minzzi";	// °ü¸®ÀÚ ¸ğµå ÁøÀÔ ºñ¹Ğ¹øÈ£
+	private static final String ADMIN_PASSWORD = "minzzi";	// ê´€ë¦¬ì ëª¨ë“œ ì§„ì… ë¹„ë°€ë²ˆí˜¸
 	
 
 	@Override
@@ -25,27 +24,27 @@ class VendingMachine implements VmMenu
 	public void menuDisp()
 	{	
 		System.out.println();
-		System.out.println("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯");
-		System.out.println("¦­  ¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯           ¦­");
-		System.out.println("¦­  ¦­ ¨ç   ÁÖ¹®ÇÏ±â     ¦­    ____   ¦­"); 
-		System.out.println("¦­  ¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°   ¦±¦¬¦¬¦¬¦°   ¦­");
-		System.out.println("¦­                                  ¦­");
-		System.out.println("¦­  ¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯           ¦­");
-		System.out.println("¦­  ¦­ ¨è ¡ÚÀÎ±â TOP 3¡Ú ¦­           ¦­"); 
-		System.out.println("¦­  ¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°           ¦­");
-		System.out.println("¦­                          ¡å¡å¡å  ¦­");
-		System.out.println("¦­  ¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯ ¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯ ¦­");
-		System.out.println("¦­  ¦­ ¨é   Àå¹Ù±¸´Ï     ¦­ ¦­ ______¦­ ¦­");
-		System.out.println("¦­  ¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦° ¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦° ¦­");
-		System.out.println("¦­       ¦®¦¬ ¡ë¡ë¡ë¦¬¦¯                ¦­");
-		System.out.println("¦­       ¦­         ¦­                ¦­");
-		System.out.println("¦­   ¦®¦³¦³¦³¦¶¦³¦³¦³¦³¦³¦³¦³¦³¦³¦¶¦³¦³¦³¦¯            ¦­");
-		System.out.println("¦­   ¦²¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦´            ¦­");
-		System.out.println("¦­   ¦±¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦°            ¦­");
-		System.out.println("¦­    ¦±¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦°             ¦­");
-		System.out.println("¦­     ¦±¦µ¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦¶¦µ¦°              ¦­");
-		System.out.println("¦­       ¦±¦µ¦µ¦µ¦µ¦µ¦µ¦µ¦µ¦µ¦°                ¦­");
-		System.out.println("¦²¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦´");
+		System.out.println("â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“");
+		System.out.println("â”ƒ  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“           â”ƒ");
+		System.out.println("â”ƒ  â”ƒ â‘    ì£¼ë¬¸í•˜ê¸°     â”ƒ    ____   â”ƒ"); 
+		System.out.println("â”ƒ  â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›   â”—â”â”â”â”›   â”ƒ");
+		System.out.println("â”ƒ                                  â”ƒ");
+		System.out.println("â”ƒ  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“           â”ƒ");
+		System.out.println("â”ƒ  â”ƒ â‘¡ â˜…ì¸ê¸° TOP 3â˜… â”ƒ           â”ƒ"); 
+		System.out.println("â”ƒ  â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›           â”ƒ");
+		System.out.println("â”ƒ                          â–¼â–¼â–¼  â”ƒ");
+		System.out.println("â”ƒ  â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“ â”â”â”â”â”â”â”â”â”“ â”ƒ");
+		System.out.println("â”ƒ  â”ƒ â‘¢   ì¥ë°”êµ¬ë‹ˆ     â”ƒ â”ƒ ______â”ƒ â”ƒ");
+		System.out.println("â”ƒ  â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”› â”—â”â”â”â”â”â”â”â”› â”ƒ");
+		System.out.println("â”ƒ       â”â” ã€“ã€“ã€“â”â”“                â”ƒ");
+		System.out.println("â”ƒ       â”ƒ         â”ƒ                â”ƒ");
+		System.out.println("â”ƒ   â”â”³â”³â”³â•‹â”³â”³â”³â”³â”³â”³â”³â”³â”³â•‹â”³â”³â”³â”“            â”ƒ");
+		System.out.println("â”ƒ   â”£â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â”«            â”ƒ");
+		System.out.println("â”ƒ   â”—â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â”›            â”ƒ");
+		System.out.println("â”ƒ    â”—â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â”›             â”ƒ");
+		System.out.println("â”ƒ     â”—â”»â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â•‹â”»â”›              â”ƒ");
+		System.out.println("â”ƒ       â”—â”»â”»â”»â”»â”»â”»â”»â”»â”»â”›                â”ƒ");
+		System.out.println("â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«");
 	}
 
 	@Override
@@ -59,8 +58,8 @@ class VendingMachine implements VmMenu
 
 		do
 		{
-			System.out.print("  ¸Ş´º¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä ");
-			System.out.print("¢º ");
+			System.out.print("  ë©”ë‰´ë¥¼ ì„ íƒí•´ ì£¼ì„¸ìš” ");
+			System.out.print("â–¶ ");
 			inputTemp = sc.next();
 			System.out.println();
 
@@ -92,7 +91,7 @@ class VendingMachine implements VmMenu
 
 			else
 			{
-				System.out.println("¿Ã¹Ù¸¥ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+				System.out.println("ì˜¬ë°”ë¥¸ ê°’ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 				System.out.println();
 				mJudge = true;
 			}
@@ -105,7 +104,7 @@ class VendingMachine implements VmMenu
 	{
 		if (menuSel == T_ORDER)
 		{
-			// ÁÖ¹®ÇÏ±â
+			// ì£¼ë¬¸í•˜ê¸°
 
 			OrderSel os1 = new OrderSel();
 			os1.orderSelect();
@@ -113,14 +112,14 @@ class VendingMachine implements VmMenu
 
 		else if (menuSel == T_POPULAR_DISH)
 		{
-			// ÀÎ±â TOP3
+			// ì¸ê¸° TOP3
 			PopularDish pd = new PopularDish();
 			pd.pMenuSelect();
 		}
 
 		else if (menuSel == T_CART)
 		{
-			// Àå¹Ù±¸´Ï
+			// ì¥ë°”êµ¬ë‹ˆ
 			ShopingCart sc1 = new ShopingCart();
 			sc1.sMenu();
 		
@@ -128,9 +127,9 @@ class VendingMachine implements VmMenu
 
 		else if (menuSel == T_ADMIN_MODE)
 		{	
-			// °ü¸®ÀÚ ¸ğµå ÁøÀÔ
-			System.out.println("·Î±×ÀÎ¿¡ ¼º°øÇß½À´Ï´Ù.");
-			System.out.println("°ü¸®ÀÚ ¸ğµå¿¡ ÁøÀÔÇÕ´Ï´Ù.");
+			// ê´€ë¦¬ì ëª¨ë“œ ì§„ì…
+			System.out.println("ë¡œê·¸ì¸ì— ì„±ê³µí–ˆìŠµë‹ˆë‹¤.");
+			System.out.println("ê´€ë¦¬ì ëª¨ë“œì— ì§„ì…í•©ë‹ˆë‹¤.");
 
 			AdMain am1 = new AdMain();
 			am1.turnOn();
